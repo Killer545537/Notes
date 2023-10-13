@@ -1,0 +1,20 @@
+\contentsline {chapter}{\numberline {1}Basics Of Measurements}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Accuracy}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Percentage of Full Scale Reading}{3}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Percentage of True Value}{3}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Point Accuracy}{3}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Percentage of Scale Span}{3}{subsection.1.1.4}%
+\contentsline {section}{\numberline {1.2}Tolerance}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Precision}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Reliability}{3}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Repeatability}{3}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Resolution}{3}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Noise}{4}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Range}{4}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Static Sensitivity}{4}{section.1.9}%
+\contentsline {chapter}{\numberline {2}Direct-Current Circuits}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Ohm's Law}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Star-Delta Transformations}{5}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Kirchhoff's Laws}{5}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Kirchhoff's Voltage Law}{5}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Kirchhoff's Current Law}{6}{subsection.2.2.2}%

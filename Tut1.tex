@@ -1,0 +1,539 @@
+\section{Tutorial-1 (19.08.2023)}
+\subsection{Examine the limit and continuity of the following functions}
+\begin{asign}
+	\[f(x)=\lim\limits_{n\to\infty}\frac{e^x-x^n\sin x}{1+x^n} \, , 0\leq x\leq\frac{\pi}{2}\, \text{at} \, x=1\]
+\end{asign}
+\begin{anse}
+	We can split the function at $x=1$,
+	\[\begin{split}
+		f(x)&=\begin{cases}
+			\lim\limits_{n\to\infty}\frac{e^x-x^n\sin x}{1+x^n} &, 0\leq x < 1\\
+			\lim\limits_{n\to\infty}\frac{e^x-x^n\sin x}{1+x^n} &, x=1\\
+			\lim\limits_{n\to\infty}\frac{e^x-x^n\sin x}{1+x^n} &, 1<x\leq \frac{\pi}{2}
+		\end{cases}\\
+		&=\begin{cases}
+			e^x &,  0\leq x < 1\\
+			\frac{e-\sin 1}{2} &, x=1\\
+			-\sin x &, 1<x\leq \frac{\pi}{2}
+		\end{cases}
+	\end{split}\]
+	Thus, clearly, $f$ is discontinuous at $x=1$.
+\end{anse}
+\begin{asign}
+	\[f(x)=\begin{cases}
+		x^2\cos(\frac{1}{x}) &, x\neq0\\
+		0 &, x=0
+	\end{cases} \, \text{at} \, x=0 \]
+\end{asign}
+\begin{anse}
+	First we calculate the limit
+	\[\begin{split}
+		L&=\lim\limits_{x\to 0}x^2\cos(\frac{1}{x})\\
+		&=0
+	\end{split}\]
+	Here, $\lim\limits_{x\to0}f(x)=f(0)$, thus the function is continuous.
+\end{anse}
+\begin{asign}
+	\[f(x)=\begin{cases}
+		\sin(\frac{1}{x-a}) &, x\neq a\\
+		0 &, x=a
+	\end{cases} \, \text{at} \, x=a\]
+\end{asign}
+\begin{anse}
+	Consider,
+	\[
+	\begin{split}
+		&x_n=a+\frac{1}{2n\pi}\\
+		&\lim\limits_{n\to \infty}x_n=a
+	\end{split}
+	\quad  \quad
+	\begin{split}
+		&y_n=a+\frac{1}{2n\pi+\frac{\pi}{2}}\\
+		&\lim\limits_{n\to\infty}y_n=a
+	\end{split}
+	\]
+	Also,
+	\[f(x_n)=0\,\land\, f(y_n)=1\]
+	Thus, by Sequence Criteria, $f$ is discontinuous at $x=a$.
+\end{anse}
+\begin{asign}
+	\[f(x)=\begin{cases}
+		\frac{e^{\frac{1}{x}}-e^{-\frac{1}{x}}}{e^{\frac{1}{x}}+e^{-\frac{1}{x}}} &, x\neq 0\\
+		0 &, x=0
+	\end{cases} \, \text{at}\, x=0\]
+\end{asign}
+\begin{anse}
+	Consider the Left Hand Limit,
+	\[\lim\limits_{x\to0^-}\frac{e^{\frac{1}{x}}-e^{-\frac{1}{x}}}{e^{\frac{1}{x}}+e^{-\frac{1}{x}}}=\lim\limits_{x\to0^-}\frac{e^{\frac{2}{x}}-1}{e^{\frac{2}{x}}+1}=-1\]
+	As $\lim\limits_{x\to0^-}f(x)\neq f(0)$ the function is discontinuous at $x=0$.
+\end{anse}
+\begin{asign}
+	\[f(x)=\begin{cases}
+		\frac{\sin[2](ax)}{x^2} &, x\neq 0\\
+		0, &, x=0
+	\end{cases} \, a\in \mathbb{R}\]
+\end{asign}
+\begin{anse}
+	\[\lim\limits_{x\to 0}f(x)=\lim\limits_{x\to0}\frac{\sin[2](ax)}{(ax)^2}\cdot a^2=a^2\]
+	Thus, the function is discontinuous for all $a\in\mathbb{R}-\{0\}$, i.e. it is continuous at $a=0$.
+\end{anse}
+\begin{asign}
+	\[f(x)=\begin{cases}
+		\frac{1-\cos x}{x^2} &, x\neq0\\
+		\frac{1}{2} &, x=0
+	\end{cases} \, \text{at} \, x=0\]
+\end{asign}
+\begin{anse}
+	\[\lim\limits_{x\to0}f(x)=\lim\limits_{x\to0} \frac{1-\cos x}{x^2}=\frac{1}{2}\lim\limits_{x\to0}\frac{\sin^2(\frac{x}{2})}{(\frac{x}{2})^2}=\frac{1}{2}\]
+	Since $\lim\limits_{x\to0}f(x)=f(0)$, the function is continuous at $x=0$.
+\end{anse}
+\begin{asign}
+	\[f(x)=\begin{cases}
+		\frac{(x-1)-|x-1|}{x-1} &, x\neq 1\\
+		2 &, x=1
+	\end{cases} \, \text{at}\, x=1\]
+\end{asign}
+\begin{anse}
+	Consider the Right Hand Limit,
+	\[\lim\limits_{x\to 1^+}\frac{(x-1)-|x-1|}{x-1} =\lim\limits_{x\to1^+}\frac{(x-1)-(x-1)}{x-1}=0\]
+	As $\lim\limits_{x\to1^+}f(x)\neq f(1)$, the function is discontinuous at $x=1$.
+\end{anse}
+\subsection{Are the following functions continuous and differentiable}
+\begin{asign}
+	\[f(x)=\begin{cases}
+		2+x &, x\geq0\\
+		2-x &, x\leq0
+	\end{cases} \, \text{at} \, x=0\]
+\end{asign}
+\begin{anse}
+	\[\lim\limits_{x\to0^-}f(x)=2 \land \lim\limits_{x\to 0^+}f(x)=2\land f(0)=2\]
+	Thus, the function is continuous at $x=2$.
+	For differentiability,
+	\[\lim\limits_{x\to 0^-}\frac{f(x)-f(0)}{x}=\lim\limits_{x\to0^-}\frac{2+x-2}{x}=1 \land \lim\limits_{x\to 0^+}\frac{f(x)-f(0)}{x}=\lim\limits_{x\to0^+}\frac{2-x-2}{x}=-1\]
+	Thus, the function is not differentiable at $x=0$.
+\end{anse}
+\begin{asign}
+	\[f(x)=\begin{cases}
+		x^2-1 &, x\geq 1\\
+		1-x &, x\leq1 
+	\end{cases}\,\text{at}\, x=1\]
+\end{asign}
+\begin{anse}
+	\[\lim\limits_{x\to1^-}f(x)=\lim\limits_{x\to1^+}f(x)=f(1)=0\]
+	Thus, the function is continuous at $x=1$. For differentiability,
+	\[\lim\limits_{x\to1^-}\frac{f(x)-f(1)}{x-1}=\lim\limits_{x\to 1^-}\frac{x^2-1-0}{x-1}=2 \land \lim\limits_{x\to1^+}\frac{f(x)-f(1)}{x-1}=\lim\limits_{x\to 1^+}\frac{1-x-0}{x-1}=-1\]
+	Thus, the function is not differentiable at $x=1$.
+\end{anse}
+\begin{asign}
+	\[f(x)=\begin{cases}
+		x\frac{e^{\frac{1}{x}}-e^{-\frac{1}{x}}}{e^{\frac{1}{x}}+e^{-\frac{1}{x}}} &, x\neq 0\\
+		0 &, x=0
+	\end{cases}\,\text{at}\,x=0\]
+\end{asign}
+\begin{anse}
+	Clearly, due to multiplication of $x$, the function is continuous at $x=0$. For differentiability,
+	\[\lim\limits_{x\to0^-}\frac{f(x)-f(0)}{x}=-1 \land \lim\limits_{x\to0^+}\frac{f(x)-f(0)}{x}=1 \]
+	Thus, the function is not differentiable at $x=0$.
+\end{anse}
+\begin{asign}
+	\[f(x)=\begin{cases}
+		x\tan^{-1}(\frac{1}{x}) &, x\neq0\\
+		0 &, x=0
+	\end{cases} \,\text{at}\,x=0\]
+\end{asign}
+\begin{anse}
+	We know,
+	\[\begin{split}
+		-\frac{\pi}{2} < &\tan^{-1}(\frac{1}{x}) <\frac{\pi}{2}\\
+		\implies -\frac{\pi}{2}x < &x\tan^{-1}(\frac{1}{x}) <\frac{\pi}{2}x\\
+		\therefore 0<&\lim\limits_{x\to0}x\tan^{-1}(\frac{1}{x}) <0
+	\end{split}\]
+	Thus, $\lim\limits_{x\to0}x\tan^{-1}(\frac{1}{x})=0$. Hence, the function is continuous at $x=0$. For differentiability,
+	\[\lim\limits_{x\to0}\frac{f(x)-f(0)}{x}=\lim\limits_{x\to0}\tan^{-1}(\frac{1}{x}) \, \text{Does not exist} \]
+	Thus, the function is not differentiable at $x=0$.
+\end{anse}
+\begin{asign}
+	\[f(x)=\begin{cases}
+		2x &, x\in\mathbb{Q}\\
+		-2x &, x\notin\mathbb{Q}
+	\end{cases}\,\text{at}\, x=0\]
+\end{asign}
+\begin{anse}
+	\[\lim\limits_{x\to0^-}f(x)=\lim\limits_{h\to0^-}f(h)=\begin{cases}
+		2h &, h\in\mathbb{Q}\\
+		-2h &, h\notin\mathbb{Q}
+	\end{cases}=0\]
+	Similarly, for the Right Hand Limit. Thus, the function is continuous at $x=0$. For differentiability,
+	\[\lim\limits_{x\to0}\frac{f(x)-f(0)}{x}=\lim\limits_{x\to 0}\frac{f(x)}{x}=\begin{cases}
+		2 &, x\in\mathbb{Q}\\
+		-2 &, x\notin\mathbb{Q}
+	\end{cases}\]
+	Thus, the function is not differentiable at $x=0$.
+\end{anse}
+\begin{asign}
+	\[f(x)=\begin{cases}
+		x^2 &, x\in\mathbb{Q}\\
+		2x &, x\notin\mathbb{Q}
+	\end{cases}\,\text{at}\, x=0\]
+\end{asign}
+\begin{anse}
+	\[\lim\limits_{x\to0^-}f(x)=\lim\limits_{h\to0^-}f(h)=\begin{cases}
+		h^2 &, h\in\mathbb{Q}\\
+		2h &, h\notin\mathbb{Q}
+	\end{cases}=0\]
+	Similarly, for the Right Hand Limit. Thus, the function is continuous at $x=0$. For differentiability,
+	\[\lim\limits_{x\to0}\frac{f(x)-f(0)}{x}=\lim\limits_{x\to 0}\frac{f(x)}{x}=\begin{cases}
+		x &, x\in\mathbb{Q}\\
+		2 &, x\notin\mathbb{Q}
+	\end{cases}\]
+	Thus, the function is not differentiable at $x=0$.
+\end{anse}
+\subsection{Question 3}
+\begin{asign}
+	Show that the function $f$ defined by  $f(x)=\begin{cases}
+		x^2\cos(\frac{1}{x}) &, x\neq0\\
+		0 &, x=0
+	\end{cases}$ is continuous and differentiable at $x=0$ but its derivative is not.
+\end{asign}
+
+\begin{anse}
+	We know,
+	\[\begin{split}
+		-1< &\cos(\frac{1}{x})< 1\\
+		\implies -x^2 < & x^2\cos(\frac{1}{x})<x^2\\
+		\therefore 0<& \lim\limits_{x\to 0}x^2\cos(\frac{1}{x})<0
+	\end{split}\]
+	Thus, $\lim\limits_{x\to0}x^2\cos(\frac{1}{x})=0$. Thus, $f$ is continuous at $x=0$. For differentiability,
+	\[\lim\limits_{x\to0}\frac{f(x)-f(0)}{x}=\lim\limits_{x\to0}x\cos(\frac{1}{x})=0\]
+	Thus, the function is differentiable at $x=0$. The derivative is,
+	\[f'(x)=\begin{cases}
+		2x\cos(\frac{1}{x})+\sin(\frac{1}{x}) &, x\neq0\\
+		0 &, x=0
+	\end{cases}\]
+	Clearly, $\sin(\frac{1}{x})$ is discontinuous at $x=0$, thus, $f'(x)$ is discontinuous at $x=0$.
+\end{anse}
+\subsection{Question 4}
+\begin{asign}
+	Show that the function $f$ defined by  $f(x)=\begin{cases}
+		x^p\cos(\frac{1}{x}) &, x\neq0\\
+		0 &, x=0
+	\end{cases}$ is continuous and differentiable at $x=0$ but its derivative is not.
+\end{asign}
+\begin{anse}
+	We know,
+	\[\begin{split}
+		-x^p<&x^p\cos(\frac{1}{x}) < x^p
+	\end{split}\]
+	Thus, the limit exists only if $p>0$. Thus, $f$ is continuous for $p>0$.  For differentiability,
+	\[\lim\limits_{x\to0} x^{p-1}\cos(\frac{1}{x})\]
+	This limit exists only when $p>1$. Thus, $f$ is differentiable for $p>1$.
+	\[f'(x)=\begin{cases}
+		px^{p-1}\cos(\frac{1}{x})+x^{p-2}\sin(\frac{1}{x}) &, x\neq0\\
+		0 &, x=0
+	\end{cases}\]
+	This is continuous for $p>2$. Thus $f'(x)$ is continuous for $p>2$.
+\end{anse}
+\subsection{Applications of IVT, Rolle's Theorem and MVT}
+\subsubsection{Determine if the following equations admits solution in the interval mentioned}
+\begin{asign}
+	\[x^5-3x^2=-1\]
+	in $[0,1]$
+\end{asign}
+\begin{anse}
+	Let,
+	\[f(x)=x^5-3x^2+1\implies f(0)=1\land f(1)=-1\]
+	Since $f(0)f(1)<0$, by Intermediate Value Theorem, there is a solution in the interval.
+\end{anse}
+\begin{asign}
+	\[\sin^2x-2\cos x=-1\]
+	in $[0,\frac{\pi}{2}]$
+\end{asign}
+\begin{anse}
+	Let,
+	\[f(x)=\sin^2x-2\cos x+1 \implies f(0)=-1 \land f(\frac{\pi}{1})=2\]
+	Since $f(0)f(\frac{\pi}{2})<0$, by Intermediate Value Theorem, there is a solution in the interval.
+\end{anse}
+\begin{asign}
+	\[(1-x)\cos x=\sin \]
+	in $(0,1)$
+\end{asign}
+\begin{anse}
+	Let,
+	\[f(x)=(1-x)\cos x-\sin x\implies f(0)=1 \land f(1)=-\sin 1\]
+	Since $f(0)f(1)<0$, by Intermediate Value Theorem, there is a solution in the interval.
+\end{anse}
+\begin{asign}
+	Show that a polynomial of odd degree has at-least one real root.
+\end{asign}
+\begin{anse}
+	Consider a polynomial $f:\mathbb{R}\to \mathbb{R}$, since it is a polynomial of odd degree,
+	\[\lim\limits_{x\to-\infty}f(x)=-\infty \land \lim\limits_{x\to\infty}f(x)=\infty \]
+	Thus, by Intermediate Value Theorem, $\exists c\in\mathbb{R}$ such that $f(c)=0$.
+\end{anse}
+\begin{asign}
+	Does there exist a $c\in (1,3)$ for the function $f(x)=x^3$ such that $f'(c)=13$.
+\end{asign}
+\begin{anse}
+	Using Lagrange Mean Value Theorem for $f$ between the points 1 and 3,
+	\[f'(c)=\frac{f(3)-f(1)}{3-1}=13\]
+\end{anse}
+\begin{asign}
+	Show that $x^5+4x=1$ has exactly one solution.
+\end{asign}
+\begin{anse}
+	Let,
+	\[f(x)=x^5+4x-1\]
+	Clearly, $f(0)=-1 \land f(1)=4$, thus, there is one root in $(0,1)$ (By Intermediate Value Theorem).\\
+	By way of contradiction, assume there to be two roots, $x=a,b$, i.e. $f(a)=f(b)=0$, then by, Rolle's Theorem, $\exists c\in (a,b)$ such that,
+	\[f'(c)=0\], but,
+	\[f'(x)=4x^4+4\]
+	This has no real solutions. Thus, $f$ can't have two roots and the root it has lies between 0 and 1.
+\end{anse}
+\begin{asign}
+	Show that $||\sin x|-|\sin y||< |x-y|$.
+\end{asign}
+\begin{anse}
+	Let,
+	\[f(x)=\sin x\]
+	By Lagrange Mean Value Theorem,
+	\[|\frac{f(x)-f(y)}{x-y}|=|f'(c)|=|\cos c|\leq 1\]
+	Thus, we can say that,
+	\[|\sin x-\sin y|\leq |x-y|\]
+	Using the triangle inequality,
+	\[||\sin x|-|\sin y||\leq |\sin x-\sin y|\leq |x-y|\]
+\end{anse}
+\subsection{Problems on Hyperbolic Functions}
+\begin{asign}
+	If $\cosh \alpha=\sec\theta$, then prove that $\tanh^2(\frac{\alpha}{2})=\tan^2(\frac{\theta}{2})$.
+\end{asign}
+\begin{anse}
+	Clearly,
+	\[\begin{split}
+		\tanh^2\left(\frac{\alpha}{2}\right)&=\left(\frac{e^{\frac{\alpha}{2}}-e^{-\frac{\alpha}{2}}}{e^\frac{\alpha}{2}+e^{-\frac{\alpha}{2}}}\right)^2\\
+		&=\frac{e^\alpha+e^{-\alpha}-2}{e^\alpha+e^{-\alpha}+2}\\
+		&=\frac{\sec\theta-1}{\sec\theta+1}\\
+		&=\frac{1-\cos\theta}{1+\cos\theta}\\
+		\therefore 	\tanh^2\left(\frac{\alpha}{2}\right)&=\tan^2(\frac{\theta}{2})
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	If $\tan\theta=\tanh x\cot y$ and $\tan\phi=\tanh x\tan y$ then show that,
+	\[\frac{\sin2\theta}{\sin2\phi}=\frac{\cosh2x+\cos2y}{\cosh2x-\cos2y}\]
+\end{asign}
+
+\begin{asign}
+	If $\tan(\theta+i\phi)=\tan\alpha+i\sec\alpha$, then prove that $e^{2\phi}=\pm\cot\frac{\alpha}{2}$ and $2\theta=n\pi+\frac{\pi}{2}+\alpha$.
+\end{asign}
+\begin{anse}
+	\[\tan(\theta+i\phi)=\tan\alpha+i\sec\alpha\implies\tan(\theta-i\phi)=\tan\alpha-i\sec\alpha\]
+	Hence,
+	\[\begin{split}
+		\tan((\theta+i\phi)+(\theta-i\phi))&=\frac{\tan\alpha+i\sec\alpha+\tan\alpha-i\sec\alpha}{1-(\tan\alpha+i\sec\alpha)(\tan\alpha-i\sec\alpha)}\\
+		\tan2\theta&=\tan(\frac{\pi}{2}+\alpha)\\
+		\therefore 2\theta&=n\pi+\frac{\pi}{2}+\alpha
+	\end{split}\]
+	\[\begin{split}
+		\tan((\theta+i\phi)-(\theta-i\phi))&=\frac{(\tan\alpha+i\sec\alpha)-(\tan\alpha-i\sec\alpha)}{1+(\tan\alpha+i\sec\alpha)(\tan\alpha-i\sec\alpha)} \\
+		\tan(2i\phi)&=i\cos\alpha\\
+		\frac{e^{2\phi}-e^{-2\phi}}{e^{2\phi}+e^{-2\phi}}&=\cos\alpha\\
+		\implies e^{4\phi}&=\cot^2\frac{\alpha}{2}\\
+		\therefore e^{2\phi}&=\pm \cot\frac{\alpha}{2}
+	\end{split}\]
+\end{anse}
+\subsection{Find the real and Imaginary parts of the following}
+\begin{asign}
+	\[\tan(\alpha+i\beta)\]
+\end{asign}
+\begin{anse}
+	\[\begin{split}
+		\tan(\alpha+i\beta)&=\frac{\sin(\alpha+i\beta)}{\cos(\alpha+i\beta)}\\
+		&=\frac{\sin(\alpha+i\beta)}{\cos(\alpha+i\beta)} \times \frac{\cos(\alpha-i\beta)}{\cos(\alpha-i\beta)}\\
+		&=\frac{\sin 2\alpha+\sin 2i\beta}{\cos 2\alpha+\cos 2i\beta}\\
+		&=\frac{\sin 2\alpha}{\cos 2\alpha+\cosh 2\beta}+i \frac{\sinh 2\beta}{\cos 2\alpha+\cosh 2\beta}
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	\[\frac{\cos(x+iy)}{(x+iy)+1}\]
+\end{asign}
+\begin{anse}
+	\[\begin{split}
+		\frac{\cos(x+iy)}{(x+iy)+1}&=\frac{\cos x\cos iy-\sin x\sin iy}{(x+iy)+1}\times \frac{(x+iy)-1}{(x+iy)-1}\\
+		&=\frac{[(x+1)-iy](\cos x \cosh x-i\sin x\sinh y)}{(x+1)^2+y^2}
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	\[\sin^2(x+iy)\]
+\end{asign}
+\begin{anse}
+	\[\begin{split}
+		\sin^2(x+iy)&=(\sin x\cos iy+\sin iy\cos x)^2\\
+		&=(\sin x\cosh y+i\sinh y\cos x)^2\\
+		&=(\sin^2x\cosh^2y-\sinh^2y\cos^2x)+i(2\sin x\sinh y\cos x\cosh y)
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	\[\frac{e^{i\theta}}{1-ke^{i\theta}}\]
+\end{asign}
+\begin{anse}
+	\[\begin{split}
+		\frac{e^{i\theta}}{1-ke^{i\theta}}&=\frac{\cos\theta+i\sin\theta}{(1-k\cos\theta)-i(k\sin\theta)}\\
+		&=\frac{\cos\theta-k+i\sin\theta}{k^2-2k\cos\theta+1}
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	\[e^{\sin(x+iy)}\]
+\end{asign}
+\begin{anse}
+	\[\begin{split}
+		e^{\sin(x+iy)}&=e^{\sin x\cosh y}e^{i(\cos x\sinh y)}\\
+		&=e^{\sin x\cosh y}(\cos(\cosh x\sin y)+i\sin(\cosh x\sin y))
+	\end{split}\]
+\end{anse}
+\subsection{Problems on Inverse Hyperbolic Functions}
+\begin{asign}
+	Express $\cos^{-1}(x+iy)$ in the form of $A+iB$.
+\end{asign}
+\begin{anse}
+	\[\cos^{-1}(x+iy)=A+iB\implies\cos^{-1}(x-iy)=A-iB\]
+	Thus, we can say,
+	\[\begin{split}
+		2A&=\cos^{-1}(x+iy)+\cos^{-1}(x-iy)\\
+		\therefore A&=\frac{1}{2}\cos^{-1}\left[x^2+y^2-\sqrt{(1-x^2+y^2)^2+4x^2y^2}\right]
+	\end{split}\]
+	\[\begin{split}
+		2iB&=\cos^{-1}(x+iy)-\cos^{-1}(x-iy)\\
+		\therefore B&=\frac{1}{2i}\cos^{-1}\left[x^2+y^2+\sqrt{(1-x^2+y^2)^2+4x^2y^2}\right]=\cosh^{-1}\left[x^2+y^2+\sqrt{(1-x^2+y^2)^2+4x^2y^2}\right]
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	Express $\tanh^{-1}(x+iy)$ into the form $\alpha+i\beta$ and hence deduce the value of $\tanh^{-1}iy$.
+\end{asign}
+\begin{anse}
+	\[\tanh^{-1}(x+iy)\implies -y+ix=\tan(-\beta+i\alpha) \, \land \, -y-ix=\tan(-\beta-i\alpha)\]
+	Thus,
+	\[\begin{split}
+		\tan2\beta&=-\tan\left[(-\beta+i\alpha)+(-\beta-i\alpha)\right]\\
+		\therefore \beta&=\frac{1}{2}\tan^{-1}\frac{2y}{1-x^2-y^2}
+	\end{split}\]
+	\[\begin{split}
+		\tan2i\alpha&=\tan\left[(-\beta+i\alpha)-(-\beta-i\alpha)\right]\\
+		\implies i\tanh\alpha&=\frac{2ix}{1+x^2+y^2}\\
+		\therefore \alpha&=\frac{1}{2}\tanh^{-1}\frac{2x}{1+x^2+y^2}
+	\end{split}\]
+	Thus, if $x=0$, then
+	\[\tanh^{-1}iy=\frac{i}{2}\tan^{-1}\frac{2y}{1-y^2}=i\tan^{-1}y\]
+\end{anse}
+\begin{asign}
+	Show that $\sinh^{-1}(\cot x)=\ln(\cot x+\csc x)$.
+\end{asign}
+\begin{anse}
+	\[\begin{split}
+		\sinh^{-1}(\cot x)&=\ln(\cot x+\sqrt{\cot^2 x+1})\\
+		&=\ln(\cot x+\csc x)
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	Show that the general term of $\text{Tan}^{-1}(x+iy)$ is $n\pi+\tan^{-1}(x+iy)=n\pi+\frac{1}{2}\tan^{-1}\frac{2x}{1-x^2-y^2}+\frac{i}{2}\tanh^{-1}\frac{2y}{1+x^2+y^2}$.
+\end{asign}
+\begin{anse}
+	Clearly, 
+	\[\tan y=x\implies \tan(y+n\pi)=x\implies n\pi+y=\tan^{-1}x\]
+	Thus, it follows that (from last question),
+	\[\text{Tan}^{-1}(x+iy)=n\pi+\tan^{-1}(x+iy)=n\pi+\frac{1}{2}\tan^{-1}\frac{2x}{1-x^2-y^2}+\frac{i}{2}\tanh^{-1}\frac{2y}{1+x^2+y^2}\]
+\end{anse}
+\begin{asign}
+	If $\sin^{-1}(\theta+i\phi)=\alpha+i\beta$, then prove that $\sin^2\alpha$ and $\cosh^2\beta$ are the roots of the equation $x^2-x(1+\theta^2+\phi^2)+\theta^2=0$.
+\end{asign}
+\begin{anse}
+	\[\begin{split}
+		\sin(\alpha+i\beta)&=\theta+i\phi\\
+		\implies \sin\alpha\cosh\beta+i\sinh\beta\cos\alpha&=\theta+i\phi
+	\end{split}\]
+	Thus,
+	\[\theta^2+\phi^2+1=\sin^2\alpha\cosh^2\beta+\sinh2\beta\cos2\alpha+1=\sin^2\alpha+\cosh^2\beta\]
+	Moreover,
+	\[\theta^2=\sin^2\alpha\cosh^2\beta\]
+	Consider a quadratic with roots $\sin^2\alpha$ and $\cosh^2\beta$,
+	\[x^2-(\sin^2\alpha+\cosh^2\beta)x+\sin^2\alpha\cosh^2\beta=0\implies x^2-x(1+\theta^2+\phi^2)+\theta^2=0 \]
+\end{anse}
+\subsection{Separate the real and imaginary parts of the following}
+\begin{asign}
+	\[\cos^{-1}(\cos\beta+i\sin\beta)\]
+\end{asign}
+\begin{anse}
+	Let,
+	\[\cos^{-1}(\cos\beta+i\sin\beta)=x+iy\]
+	Thus,
+	\[\begin{split}
+		\cos x\cosh y&=\cot\beta\\
+		-\sin x\sinh y&=\sin\beta
+	\end{split}\]
+	On solving we get,
+	\[\cos^{-1}(\cos\beta+i\sin\beta)=\sin^{-1}\sqrt{\sin\beta}+i\ln(\sqrt{1+\sin\beta}-\sqrt{\sin\beta})\]
+\end{anse}
+\begin{asign}
+	\[\tan^{-1}(\cos\beta+i\sin\beta)\]
+\end{asign}
+\begin{anse}
+	Let,
+	\[\tan^{-1}(\cos\beta+i\sin\beta)=x+iy\]
+	Thus,
+	\[\cos\beta+i\sin\beta=\tan(x+iy)\implies\cos\beta-i\sin\beta=\tan(x-iy)\]
+	\[\begin{split}
+		\tan2x&=\tan[(x+iy)+(x-iy)]\\
+		\implies x&=\frac{\pi}{4}
+	\end{split}\]
+	\[\begin{split}
+		\tan2iy&=\tan[(x+iy)-(x-iy)]\\
+		\implies 2y&=\tanh^{-1}\sin\beta\\
+		\implies y&=\frac{1}{2}\ln\tan(\frac{\pi}{4}+\frac{\beta}{2})=\frac{1}{2}\ln\cot(\frac{\pi}{4}-\frac{\beta}{2})
+	\end{split}\]
+	Hence\footnote{Can't get the $\frac{n\pi}{2}$ term},
+	\[\tan^{-1}(\cos\beta+i\sin\beta)=\frac{\pi}{4}+\frac{i}{2}\ln\cot(\frac{\pi}{4}-\frac{\beta}{2})\]
+\end{anse}
+\begin{asign}
+	\[\sin^{-1}{(\cos\beta+i\sin\beta)}\] 
+\end{asign}
+\begin{anse}
+	Let,
+	\[\sin^{-1}(\cos\beta+i\sin\beta)=x+iy\]
+	Thus,
+	\[\begin{split}
+		\sin x\cosh y&=\cos\beta\\
+		\cos x\sinh y&=\sin\theta
+	\end{split}\]
+	On solving we get,
+	\[\sin^{-1}(\cos\beta+i\sin\beta)=\cos^{-1}\sqrt{\sin\beta}+i\ln(\sqrt{1+\sin\beta}+\sqrt{\sin\beta})\]
+\end{anse}
+\begin{asign}
+	Show that $\sin^{-1}\csc\theta=[2n+(-1)^n]\frac{\pi}{2}+i(-1)^n\ln\cot\frac{\theta}{2}$
+\end{asign}
+\begin{asign}
+	If $\cosh^{-1}(x+iy)+\cosh^{-1}(x-iy)=\cosh^-1a$, show that $2(a-1)x^2+2(a+1)y^2=a^2-1$
+\end{asign}
+\begin{anse}
+	Let,
+	\[\cosh^{-1}(x+iy)=\alpha+i\beta \implies\cosh^{-1}(x-iy)=\alpha-i\beta\]
+	Thus,
+	\[2\alpha=\cosh^{-1}a\implies \cosh^2\alpha=\frac{a+1}{2} \land \sinh^2\alpha=\frac{a-1}{2}\]
+	Also,
+	\[\begin{split}
+		x+iy&=\cosh(\alpha+i\beta)\\
+		\implies x+iy&=\cosh\alpha\cos\beta+i\sinh\alpha\sin\beta
+	\end{split}\]
+	Thus, solving,
+	\[\begin{split}
+		\cos^2\beta+\sin^2\beta&=1\\
+		\implies \left(\frac{x}{\cosh\alpha}\right)^2+ \left(\frac{y}{\sinh\alpha}\right)^2&=1\\
+		x^2\sinh^2\alpha+y^2\cosh^2\alpha&=\cosh^2\alpha\sinh^2\alpha\\
+		\therefore 2(a-1)x^2+2(a+1)y^2&=a^2-1
+	\end{split}\]
+\end{anse}
+
+
+
+
+
+
+
+

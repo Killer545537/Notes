@@ -1,0 +1,1100 @@
+\include{C.tex}
+
+\begin{document}
+
+	\begin{titlepage}
+		\begin{center}
+			\Huge{Mathematics-1 (FCMT001)}\\
+			Srijan Mahajan (2023UCM2326)\\
+			Prof. Sarika
+		\end{center}
+	\end{titlepage}
+	\tableofcontents
+	\newpage
+
+	\chapter{Functions of Single Variable}
+	Some common sets are,
+	\begin{itemize}
+		\item $\mathbb{R}$ It is the set of all real numbers
+		\item $\mathbb{N}$ It is the set of all natural numbers
+		\item $\mathbb{Z}$ It is the set of all integers
+		\item $\mathbb{Q}$ It is the set of all rationals
+		\item $\mathbb{Q}^\complement$ It is the set of all irrationals
+	\end{itemize}
+	Also, $\mathbb{R}=\mathbb{Q} \cup \mathbb{Q}^\complement$.
+	\begin{theorem}[Uncountable $\mathbb{Q}^\complement$]
+		The set of all irrationals is uncountable.
+	\end{theorem}
+	\begin{proof}
+		We know, $\mathbb{R}$ is uncountable and $\mathbb{Q}$ is uncountable, since,
+		\[\mathbb{R}=\mathbb{Q} \cup \mathbb{Q}^\complement\]
+		$\mathbb{Q}^\complement$ must be uncountable.
+	\end{proof}
+	\section{Ranges}
+	\subsection{Maximum and Minimum}
+	The maxima is the highest element in the set and similarly, minima is the lowest element in the set.\footnote{Maximum and minimum are unique for a set, i.e. there exists only one for a given set.}
+	\begin{eg}[Max and min not enough]
+		Find the maximum and minimum of
+		\[S=\{\frac{1}{n} | n \in \mathbb{N}\}\]
+	\end{eg}
+	\begin{explanation}
+		Here, the set can be represented as,
+		\[S\in \left( 0, 1 \right]\]
+		Here, the maximum value is clearly 1, however, the minimum vale of the expression can't be defined\footnote{Since 0 is not in the set and also, 0 is never actually obtained but only close to.}.
+	\end{explanation}
+	\subsection{Infimum and Supremum}
+	The infimum of a set is its greatest lower bound and supremum is the lowest upper bound. These are generalizations of maximum and minimum.
+	\begin{eg}
+		Find the infimum and supremum of
+		\[S=\{\frac{1}{n} | n \in \mathbb{N}\}\]
+	\end{eg} 
+	\begin{explanation}
+		Similarly,
+		\[S=\left( 0, 1 \right] \]
+		Thus, the infimum is 0 and supremum is 1.
+	\end{explanation}
+	\begin{eg}[Not always in set]
+		Find the infimum and supremum of
+		\[S=\{ x^2\leq 2 | x\in \mathbb{Q}^+ \}\]
+	\end{eg}
+	\begin{explanation}
+		\[x\in (0, \sqrt{2} ]\]
+		Here, $x$ is defined in the natural numbers but the supremum is not in $\mathbb{Q}^+$. Thus, infimum and supremum are not always a part of the set.
+	\end{explanation}
+	\begin{eg}
+		Find the infimum and supremum of
+		\[S=\{1+\frac{(-1)^n}{n} | n\in \mathbb{N}\}\]
+	\end{eg}
+	\begin{explanation}
+		The next few digits are, $0, \frac{3}{2}, \frac{2}{3}, \frac{5}{4}, \cdots$. Hence, infimum is 0 and supremum is $\frac{3}{2}$.
+	\end{explanation}
+	\section{Bounded Set}
+	A set is said to be bounded if it has both upper and lower bounds. E.g. $(0, \infty)$ has a lower bound but no upper bound.
+	\begin{eg}[Finite]
+		Is the given set finite/infinite, bounded/unbounded and find infimum and supremum (if exists),
+		\[S= \{ \sin(\frac{n\pi}{2}) | n\in \mathbb{Z} \}\]
+	\end{eg}
+	\begin{explanation}
+		The range of the set is,
+		\[ran(S)=\{-1,0,1\}\]
+		Since the cardinality is finite, the set $S$ is said to be finite, and bounded. Clearly, the infimum is $-1$ and the supremum is $1$.
+	\end{explanation}
+	\section{Limits}
+	\begin{theorem}[Continuity]
+		A function $f: S \subseteq \mathbb{R} \to \mathbb{R}$ is continuous at $x=a$ if,
+		\[\lim\limits_{x\to a^-}f(x)=\lim\limits_{x\to a^+}f(x)=\lim\limits_{x\to a}f(x)=f(a)\]
+	\end{theorem}
+	\begin{theorem}[Limit Exists]
+		Let $S\subset \mathbb{R}$ and $f:S\to \mathbb{R}$, we can say $\lim\limits_{x\to a}f(x)=L$ if,
+		\[\lim\limits_{x\to a^-}f(x)=\lim\limits_{x\to a^+}f(x)=L\]
+	\end{theorem}
+	We can say that the limit exists at some point when the function approaches the value from both sides (left and right hand limit), however, this works only in the case of $\mathbb{R}$. It fails in $\mathbb{R}^n$, as the point can be achieved from infinitely many directions (disc/sphere).
+	\begin{theorem}[$\epsilon-\delta$ definition of a limit]
+		Let $f(x)$ be a real valued function defined on an open interval around $a$.
+		\[\lim\limits_{x\to a}f(x)=L\text{ , if } \forall \epsilon>0, \exists \delta>0 (\forall x>0, 0<|x-a|<\delta \implies |f(x)-L|<\epsilon)\]
+			\begin{figure}[H]
+				\centering			
+				\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        			
+				\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+					%uncomment if require: \path (0,329); %set diagram left start at 0, and has height of 329			
+					%Straight Lines [id:da39637912070401926] 
+					\draw    (90,277.11) -- (90,22) ;
+					\draw [shift={(90,20)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+					%Straight Lines [id:da014662667668136953] 
+					\draw    (90,277.11) -- (418,277) ;
+					\draw [shift={(420,277)}, rotate = 179.98] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+					%Curve Lines [id:da3684607671706839] 
+					\draw    (130,180) .. controls (317,235) and (184,41) .. (400,60) ;
+					%Straight Lines [id:da8088388105686377] 
+					\draw  [dash pattern={on 0.84pt off 2.51pt}]  (253,136) -- (255,277.06) ;
+					%Straight Lines [id:da3809187691914382] 
+					\draw  [dash pattern={on 0.84pt off 2.51pt}]  (357,58.94) -- (359,277) ;
+					%Straight Lines [id:da8808960388225944] 
+					\draw  [dash pattern={on 0.84pt off 2.51pt}]  (90,137) -- (253,136) ;
+					%Straight Lines [id:da32340812817097375] 
+					\draw  [dash pattern={on 0.84pt off 2.51pt}]  (91,59.94) -- (357,58.94) ;				
+					% Text Node
+					\draw (437,272.4) node [anchor=north west][inner sep=0.75pt]    {$x$};
+					% Text Node
+					\draw (241,282.4) node [anchor=north west][inner sep=0.75pt]    {$a-\delta $};
+					% Text Node
+					\draw (341,282.4) node [anchor=north west][inner sep=0.75pt]    {$a-\delta $};
+					% Text Node
+					\draw (301,282.4) node [anchor=north west][inner sep=0.75pt]    {$a$};
+					% Text Node
+					\draw (298,92.4) node [anchor=north west][inner sep=0.75pt]    {$f( x)$};
+					% Text Node
+					\draw (51,129.4) node [anchor=north west][inner sep=0.75pt]    {$L-\epsilon $};
+					% Text Node
+					\draw (51,52.4) node [anchor=north west][inner sep=0.75pt]    {$L+\epsilon $};
+					% Text Node
+					\draw (61,92.4) node [anchor=north west][inner sep=0.75pt]    {$L$};
+				\end{tikzpicture}
+			\end{figure}
+	\end{theorem}
+	Clearly, if $f(a)=L$, then $f$ is continuous.
+	\subsection{Sequence Definition of a Limit}
+	A sequence $\{x_n\}$ is a $f:\mathbb{N}\to \mathbb{R}$ such that $f(n)=x_n$.\\
+	If $x_n \to a \, (a\in \mathbb{R})$, then the sequence is said to be convergent, else convergent/oscillating.
+	\begin{theorem}[Non-existing Limit]
+		$\lim\limits_{x\to a}f(x)$ doesn't exist iff 
+		\[\begin{split}
+			\lim\limits_{n\to \infty} f(x_n)&=L_1\\
+			\lim\limits_{n\to \infty} f(y_n)&=L_2\\
+		\end{split}\]
+		where $L_1\neq L_2$ and $x_n\to a \land y_n \to a$ as $n\to \infty$.
+	\end{theorem}
+	To prove that a limit exists, it must satisfy $\lim\limits_{n\to\infty}f(x_n)=L$ for all sequences $x_n$.
+	\begin{eg}
+		Find the limit
+		\[\lim\limits_{x\to 0} \sin(\frac{1}{x})\]
+	\end{eg}
+	For these, we need to work backwards, first we take two values that the function can take (here 0 and 1), then find two sequences that converge to the same but give the respective values.
+	\begin{explanation}
+		Consider,
+		\[x_n=\frac{1}{2n\pi} \, \land \, y_n=\frac{1}{2n\pi+\frac{\pi}{2}}\]
+		Clearly,
+		\[f(x_n)=0\land f(y_n)=1\]
+		But $\lim\limits_{n\to\infty}x_n=\lim\limits_{n\to\infty}y_n=0$. Thus, the limit doesn't exist.
+	\end{explanation}
+	\begin{eg}[Someone]
+		Show that the limit $\lim\limits_{x\to 0} \frac{|x|}{x}$ doesn't exist.
+	\end{eg}
+	\begin{explanation}
+		Consider the sequences,
+	\[	\begin{split}
+			x_n=\frac{1}{n} \land y_n=-\frac{1}{n}
+		\end{split}\]
+		Clearly, $\lim\limits_{n\to \infty}x_n=\lim\limits_{n\to \infty}y_n=0$
+		Also,
+		\[\lim\limits_{n\to \infty} \frac{|\frac{1}{n}|}{\frac{1}{n}}=1 \land \lim\limits_{n\to \infty} \frac{|-\frac{1}{n}|}{-\frac{1}{n}}=-1 \]
+		Thus, the limit doesn't exist.
+	\end{explanation}
+	\begin{eg}
+		Show that $f$ is continuous at $x=\frac{1}{2}$ and discontinuous everywhere else, where $f$ is,
+		\[f(x)=\begin{cases}
+			x &, x\in \mathbb{Q}\\
+			\frac{1}{2} &, x\notin \mathbb{Q}
+		\end{cases}\]
+	\end{eg}
+	\begin{explanation}
+		Consider the Left Hand Limit,
+		\[\lim\limits_{x\to \frac{1}{2}^-}f(x)=\lim\limits_{h\to 0}f(\frac{1}{2}-h)=\begin{cases}
+		\lim\limits_{h\to0}\frac{1}{2}-h &, x\in \mathbb{Q}\\
+		\lim\limits_{h\to0}\frac{1}{2} &, x\notin \mathbb{Q}
+		\end{cases}=\frac{1}{2}\]
+		Similarly, Right Hand Limit is $\frac{1}{2}$, thus the function is continuous at $x=\frac{1}{2}$.\\
+		Consider any point $x=a\in \mathbb{R}-\{\frac{1}{2}\}$,
+		\[\lim\limits_{x\to a^-}f(x)=\begin{cases}
+		\lim\limits_{h\to 0} a-h &, a-h\in \mathbb{Q}\\
+		\lim\limits_{h\to 0} \frac{1}{2}&, a-h\notin \mathbb{Q}
+		\end{cases}\]
+		Thus the limit doesn't exist.
+	\end{explanation}
+	\begin{theorem}[Intermediate Value Theorem: A Special Case]
+		Consider a continuous function $f$ on $[a,b]$ such that $f(a)f(b)<0$, then, $\exists c\in (a,b)$ such that $f(c)=0$.
+	\end{theorem}
+	\section{Differentiability}
+	\begin{theorem}[A differentiable function]
+		A function $f: S\neq \phi \subseteq \mathbb{R}\to \mathbb{R}$ is called differentiable at $x=a$ iff the following limit exists,
+		\[\lim\limits_{x\to a}\frac{f(x)-f(a)}{x-a}\]
+		If the limit does exist,
+		\[\lim\limits_{x\to a}\frac{f(x)-f(a)}{x-a}=f'(a)\]
+	\end{theorem}
+	\begin{eg}
+		Show $f$ is continuous at $x=0$,
+		\[f(x)=\begin{cases}
+			x^2\sin(\frac{1}{x}) &, x\neq 0\\
+			0 &, x=0
+		\end{cases}\]
+	\end{eg}
+	\begin{explanation}
+		Suppose $\epsilon>0$. Now choose $\delta=\sqrt{\epsilon}$,\\
+		Let $|x-0|<\delta$.
+		Check,
+		\[\begin{split}
+			&|x^2\sin(\frac{1}{x})\\
+			\leq & |x|^2\\
+			\leq &\delta^2\\
+			=& \epsilon
+		\end{split}\]
+		Thus, $|x^2\sin(\frac{1}{x})|<\epsilon$, so, $f$ is continuous at $x=0$.
+	\end{explanation}
+	\begin{theorem}[Rolle's Theorem]
+		Let $f:[a,b]\to\mathbb{R}$ be a continuous function on its domain and be differentiable on $(a,b)$, such that $f(a)=f(b)$, then $\exists c\in(a,b)$ such that, $f'(c)=0$.
+	\end{theorem}
+	\begin{theorem}[Lagrange Mean Value Theorem]
+		Let $f:[a,b]\to\mathbb{R}$ be a continuous function on its domain and be differentiable on $(a,b)$, then $\exists c\in(a,b)$ such that, $f'(c)=\frac{f(b)-f(a)}{b-a}$.
+	\end{theorem}
+	\begin{proof}
+		We can prove this using Rolle's Theorem. It is an extension of Rolle's Theorem.
+	\end{proof}
+	\include{Tut1.tex}
+	\section{Successive Differentiation}
+	Consider a function $y=f(x)$, then the notation for the $n^\text{th}$ order derivatives is
+	\[\begin{split}
+	& y_1, y_2, \ldots y_n\\
+	& y', y'', y''', y^{(iv)} \ldots y^{(n)}\\
+	& \dv{y}{x}, \dv[2]{y}{x} \ldots \dv[n]{y}{x}\\
+	& \mathrm{D}x, \dots \mathrm{D}^n x
+	\end{split}\]
+
+	\subsection{$n^\text{th}$ Order Derivatives of Common Functions}
+	\[y=x^m\implies y^{(n)}=\Perm{m}{n} x^{m-n}\quad (m>n)\]
+	\[y=\frac{1}{ax+b}\implies y^{(n)}=(-1)^n\frac{n!a^n}{(ax+b)^{n+1}}\]
+	\[y=a^{mx}\implies y^{(n)}=(m\ln a)^n a^{mx}\]
+	\[y=\sin(ax+b)\implies y^{(n)}=a^n\sin(ax+b+n\frac{\pi}{2})\]
+	\[y=\cos(ax+b)\implies y^{(n)}=a^n\cos(ax+b+n\frac{\pi}{2})\]
+	\[y=e^{ax}\sin(bx+c)\implies y^{(n)}=(a^2+b^2)^{\frac{n}{2}}e^{ax}\sin(bx+c+n\tan^{-1}(\frac{b}{a}))\]
+	\[y=\ln(ax+b)\implies y^{(n)}=\frac{(-1)^{n-1}(n-1)!a^n}{(ax+b)^n}\]
+	\begin{eg}
+		Find the $n^\text{th}$ derivative of $y=\tan^{-1}(\frac{x}{a})$.
+	\end{eg}
+	\begin{explanation}
+		\[\begin{split}
+			y_1&=\frac{a}{x^2+a^2}\\
+			&=\frac{1}{2i}\left[\frac{1}{x-ia}-\frac{1}{x+ia}\right]\\
+			\therefore y_n&=\frac{(-1)^{n-1)}(n-1)!}{2i}\left[\frac{1}{(x-ia)^n}-\frac{1}{(x+ia)^n}\right]
+		\end{split}\]
+		Here, let $x=r\cos\theta$ and $a=r\sin\theta$,
+		\[\implies \frac{1}{(x-ia)^n}=r^{-n}e^{in\theta} \land \frac{1}{(x+ia)^n}=r^{-n}e^{-in\theta}\]
+		\[\begin{split}
+			y_n&=(-1)^{n-1}(n-1)!r^{-n}\sin n\theta\\
+			&=(-1)^{n-1}(n-1)!a^{-n}\sin^n\theta \sin n\theta\\
+			&=(-1)^{n-1}(n-1)!(x^2+a^2)^{-\frac{n}{2}}(\frac{a}{\sqrt{x^2+a^2}})^n\sin(n\sin^{-1}(\frac{a}{\sqrt{x^2+a^2}}))
+		\end{split}\]
+	\end{explanation}
+	\begin{theorem}[Leibniz Theorem]
+		If $u$ and $v$ are differentiable functions of the order $n$, then,
+		\[y=uv\implies \dv[n]{y}{x}=\sum_{k=0}^{n}\Comb{n}{k}u_{n-k}v_k\]
+	\end{theorem}
+	\begin{proof}
+		By Mathematical Induction
+	\end{proof}
+	\include{Tut2.tex}
+	
+\section{Taylor's Theorem \footnote{By Brook Taylor}}
+If $f, f'', \ldots f^{(n)}$ all exist and are continuous on an interval $(a,b)$.
+\[f(x)=f(a)+\frac{(x-a)}{1!}f'(a)+\frac{(x-a)^2}{2!}f''(a)\cdots + \frac{(x-a)^n}{n!}f^{(n)}(a)+ \frac{(x-a)^{n+1}}{(n+1)!}f^{(n+1)}(\xi), \quad (\xi\in (a,x))\]
+Here, $R_n(x)=\frac{(x-a)^n}{n!}f^{(n)}(a)+ \frac{(x-a)^{n+1}}{(n+1)!}f^{(n+1)}(\xi)$ is the remainder term. It denotes the error in the expansion of the function. It can also we written as,
+\[\frac{(x-a)^n}{n!}f^{(n)}(a)+ \frac{(x-a)^{n+1}}{(n+1)!}f^{(n+1)}(a+\theta(x-a)), \quad (\theta\in \left(0,1\right])\]
+If $\lim\limits_{n\to\infty}R_n(x)\to 0$, then, Taylor's theorem becomes Taylor Series.\\
+The Taylor Series expansion of $f$ about $x=a$ is,
+\[f(x)=\sum_{n=0}^{\infty} \frac{(x-a)^n}{n!}f^{(n)}(a)\]
+\subsection{Maclaurin Series \footnote{By Colin Maclaurin}}
+If $a=0$, then Taylor Series is known as Maclaurin Series.
+\[f(x)=\sum_{n=0}^{\infty}\frac{x^n}{n!}f^{(n)}(0)\]
+\[f(x+h)=\sum_{n=0}^{\infty}\frac{h^n}{n!}f^{(n)}(x) \quad (\text{Can be used to calculate errors})\]
+\begin{eg}
+	Find the Taylor Series Expansion of $\sin x$ about the point $x=\frac{\pi}{2}$.
+\end{eg}
+\begin{explanation}
+	\[\begin{split}
+		\sin x&=1-\frac{(x-\frac{\pi}{2})^2}{2!}+\frac{(x-\frac{\pi}{2})^4}{4!}+\cdots\\
+		&=\sum_{n=0}^{\infty} \frac{(x-\frac{\pi}{2})^{2n}}{(2n)!}
+	\end{split}\]
+\end{explanation}
+\begin{eg}
+	If $f(x)=4x^5+3x^2+9$, then find the expansion about $x=1$. Also, evaluate $f(1.01)$.
+\end{eg}
+\begin{explanation}
+	\[\begin{split}
+		f(x)&=f(1)+\frac{(x-1)}{1!}f'(1)+\frac{(x-1)^2}{2!}f''(1)\cdots + \frac{(x-1)^n}{n!}f^{(n)}(1)\\
+		&=16+\frac{(x-1)}{1}(26)+\frac{(x-1)^2}{2!}(86)+\frac{(x-1)^3}{3!}(240)+\frac{(x-1)^4}{4!}(480)+\frac{(x-1)^5}{5!}(480)
+	\end{split}\]
+\end{explanation}
+\section{Hyperbolic Functions}
+These functions are called hyperbolic functions because $(\cosh x,\sinh x)$ satisfy the equation of a hyperbola\footnote{Hence, $\cosh^2x-\sinh^2x=1$}.\\
+The hyperbolic functions are-\begin{itemize}
+	\item $\sinh x=\frac{e^x-e^{-x}}{2}$
+	\item $\cosh x=\frac{e^x+e^{-x}}{2}$
+	\item $\tanh x=\frac{\sinh x}{\cos hx}$
+	\item $\csch x=\frac{1}{\sinh x}$
+	\item $\sech x=\frac{1}{\cosh x}$
+	\item $\coth x=\frac{1}{\tanh x}$
+\end{itemize}
+
+\subsection{Graphs}
+First, we observe, 
+	\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[samples=250, line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{axis}[
+			x=1cm,y=1cm,
+			axis lines=middle,
+			ymajorgrids=true,
+			xmajorgrids=true,
+			xmin=-5,
+			xmax=5,
+			ymin=-0,
+			ymax=6,
+			xtick={-7,-6,...,10},
+			ytick={-4,-3,...,5},]
+			\addplot[very thick, blue] plot(\x, {0.5*exp(\x)});
+			\addplot[very thick, red] plot(\x, {0.5*exp(-\x)});
+		\end{axis}
+	\end{tikzpicture}
+	\caption*{Graphs of \color{blue}$\frac{e^x}{2}$ and \color{red}$\frac{e^{-x}}{2}$}
+\end{figure}
+Now, we see,
+	\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[samples=150, line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{axis}[
+			x=1cm,y=1cm,
+			axis lines=middle,
+			ymajorgrids=true,
+			xmajorgrids=true,
+			xmin=-5,
+			xmax=5,
+			ymin=-3,
+			ymax=4,
+			xtick={-10,-9,...,10},
+			ytick={-10,-9,...,10},]
+			\addplot[very thick, blue] plot(\x,{sinh(\x)});
+			\addplot[very thick, red] plot(\x,{cosh(\x)});
+		\end{axis}
+	\end{tikzpicture}
+	\caption*{Graphs of \color{blue}$\sinh x$ and \color{red}$\cosh x$}
+\end{figure}
+	\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[samples=150, line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{axis}[
+			x=1cm,y=1cm,
+			axis lines=middle,
+			ymajorgrids=true,
+			xmajorgrids=true,
+			xmin=-5,
+			xmax=5,
+			ymin=-1.5,
+			ymax=1.5,
+			xtick={-10,-9,...,10},
+			ytick={-10,-9,...,10},]
+			\addplot[very thick, black] plot(\x,{tanh(\x)});
+		\end{axis}
+	\end{tikzpicture}
+	\caption*{Graph of $\tanh x$}
+\end{figure}
+	\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[samples=150, line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{axis}[
+			x=1cm,y=1cm,
+			axis lines=middle,
+			ymajorgrids=true,
+			xmajorgrids=true,
+			xmin=-5,
+			xmax=5,
+			ymin=-3,
+			ymax=3.8,
+			xtick={-10,-9,...,10},
+			ytick={-2,...,10},]
+			\addplot[very thick, blue] plot(\x,{1/sinh(\x)});
+			\addplot[very thick, red] plot(\x,{1/cosh(\x)});
+		\end{axis}
+	\end{tikzpicture}
+	\caption*{Graphs of \color{blue}$\csch x$ and \color{red}$\sech x$}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[samples=150, line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{axis}[
+			x=1cm,y=1cm,
+			axis lines=middle,
+			ymajorgrids=true,
+			xmajorgrids=true,
+			xmin=-3,
+			xmax=3,
+			ymin=-5,
+			ymax=5,
+			xtick={-10,-9,...,10},
+			ytick={-10,-9,...,10},]
+			\addplot[very thick, black] plot(\x,{1/tanh(\x)});
+		\end{axis}
+	\end{tikzpicture}
+	\caption*{Graph of $\coth x$}
+\end{figure}
+\subsection{Identities of Conversion}
+\[\begin{split}
+	\sin(ix)&=i\sinh x\\
+	\cos(ix)&=\cosh x\\
+	\tan(ix)&=i\tanh x
+\end{split}\]
+For any identity $f(\sin x,\cos x)$, $f(i\sinh x, \cosh x)$ is also valid.
+\subsection{Period}
+Hyperbolic functions have no period in $\mathbb{R}$, however in $\mathbb{C}$,\begin{itemize}
+	\item $\sinh x$ and $\cosh x$ have period $2in\pi$
+	\item $\tanh x$ has period $in\pi$
+\end{itemize}
+\subsection{Inverse Hyperbolic Functions}
+\[\sinh(x+iy)=u+iv\implies x+iy=\sinh^{-1}(u+iv)\]
+Also, for the general solution,
+\[\text{Sinh}^{-1}(u+iv)=2n\pi i+x+iy\]
+\begin{eg}
+	Show that $\sinh^{-1}z=\ln(z+\sqrt{z^2+1})$.
+\end{eg}
+\begin{explanation}
+	Let $\sinh^{-1}z=w$,
+	\[\implies z=\sinh w\, \land \, \cosh w=\sqrt{z^2+1}\]
+	Also,
+	\[\begin{split}
+		\sinh w+\cosh w&=e^w\\
+		\implies w&=\ln(z+\sqrt{z^2+1})\\
+		\therefore \sinh^{-1}z&=\ln(z+\sqrt{z^2+1})
+	\end{split}\]
+	Similarly,
+	\[\begin{split}
+		\cosh^{-1}z&=\ln(z+\sqrt{z^2-1})\\
+		\tanh^{-1}z&=\frac{1}{2}\ln(\frac{1+z}{1-z})
+	\end{split}\]
+\end{explanation}
+\subsection{More Identities of Conversion}
+\[\begin{split}
+	\sinh^{-1}x&=-i\sin^{-1}ix\\
+	\cosh^{-1}x&=-i\cos^{-1}x\\
+	\tanh^{-1}x&=-i\tan^{-1}ix
+\end{split}\]
+\chapter{Functions of Several Variables}
+First, we say that the real line $\mathbb{R}$ is both open and closed.
+\begin{eg}
+	$f:\mathbb{R}^2\to\mathbb{R}$ is given as,
+	\[f(x,y)=xy\]
+	Then the domain and range of $f$ is?
+\end{eg}
+\begin{explanation}
+	Clearly,
+	\[\text{Dom}(f)=\mathbb{R}^2\,\land \, \text{Ran}(f)=\mathbb{R}\]
+\end{explanation}
+\begin{eg}
+	$f:\mathbb{R}^2\to\mathbb{R}$ is given as,
+	\[f(x,y)=\frac{1}{x^2+y^2}\]
+	Then the domain and range of $f$ is?
+\end{eg}
+\begin{explanation}
+	Clearly,
+	\[x^2+y^2>0\implies \frac{1}{x^2+y^2}<\infty\]
+	Thus,
+	\[\text{Dom}(f)=\mathbb{R}^2-{(0,0)}\,\land \, \text{Ran}(f)=\mathbb{R}^+\]
+\end{explanation}
+\begin{eg}
+	$f:\mathbb{R}^2\to\mathbb{R}$ is given as,
+	\[f(x,y)=\frac{1}{\sqrt{4-x^2-y^2}}\]
+	Then the domain and range of $f$ is?
+\end{eg}
+\begin{explanation}
+	Clearly,
+	\[4-x^2-y^2>0\implies x^2+y^2<4\]
+	Thus,
+	\[\text{Dom}(f)=\{(x,y)| x^2+y^2<4\} \, \land \, \text{Ran}(f)=[\frac{1}{2},\infty)\]
+\end{explanation}
+\section{Limit in Higher Dimensions}
+The limit of a function exists if on approaching the point from all directions from all possible paths, the same value is obtained.\\
+Let there be $f:S\subseteq \mathbb{R}^2\to \mathbb{R}$, where, $f$ may or may not be defined at $(a,b)$, then,
+\[\lim\limits_{(x,y)\to(a,b)} f(x,y)=L\]
+\[\forall \epsilon>0 \exists \delta>0 (\begin{array}{l}
+	\sqrt{(x-a)^2+(y-b)^2}<\delta\\
+	|x-a|<\delta, |y-b|<\delta\\
+	|x-a|+|y-b|<\delta
+\end{array})\implies |f(x,y)-L|<\epsilon\]
+\begin{eg}
+	Find the limit of
+	\[f(x,y)=\frac{xy}{x^2+y^2}\]
+\end{eg}
+\begin{explanation}
+	Let $y=mx$ be the path on which $(0,0)$ lies.
+	\[f(x,mx)=\frac{m}{1+m^2}\]
+	Since the value of the function depends upon the path,
+	\[\lim\limits_{(x,y)\to(0,0)}\frac{xy}{x^2+y^2} \text{Does not exist}\]
+\end{explanation}
+\section{Continuity}
+Consider a function $f$ such that,
+\[\lim\limits_{(x,y)\to(a,b)}f(x,y)=L\]
+Then $f$ is continuous at a point $(a,b)$, is $f(x,y)$ is defined at $(a,b)$ and $L=f(a,b)$.
+\begin{eg}
+	Discuss the continuity of
+	\[f(x,y)=\begin{cases}
+		x^2+2y &, (x,y)\neq(1,2)\\
+		0 &, (x,y)=(1,2) 
+	\end{cases}\]
+\end{eg}
+\begin{explanation}
+	Here,
+	\[\lim\limits_{(x,y)\to(1,2)}f(x,y)=5\]
+	Thus, the function is discontinuous.\\
+	However, it is a removal point of discontinuity since it can be made continuous by changing the function definition.
+\end{explanation}
+\begin{eg}
+	Show that $f$ is continuous at $(0,0)$,
+	\[f(x)=\begin{cases}
+		\frac{xy}{\sqrt{x^2+y^2}} &, (x,y)\neq(0,0)\\
+		0 &, (x,y)=(0,0)
+	\end{cases}\]
+\end{eg}
+\begin{explanation}
+	Suppose $\epsilon>0$. Now choose $\delta=2\epsilon$.\\
+	Let, $\sqrt{|x|^2+|y|^2}<\delta$.
+	Check,
+	\[\begin{split}
+		|f(x,y)-f(0,0)|&=|\frac{xy}{\sqrt{x^2+y^2}}|\\
+		&\leq \frac{1}{2}\sqrt{x^2+y^2} \quad (\because |xy|\leq \frac{x^2+y^2}{2})\\
+		&\leq \frac{\delta}{2}=\epsilon
+	\end{split}\]
+\end{explanation}
+Now, if the repeated limit exists, then the limit may or may not exist, however if the limit exists, then the repeated limit must exist, i.e.,
+\[\lim\limits_{(x,y)\to(a,b)}f(x,y)=L\implies \lim\limits_{x\to a}\left(\lim\limits_{y\to b}f(x,y)\right)=\lim\limits_{y\to b}\left(\lim\limits_{x\to a}f(x,y)\right)=L\]
+\section{Partial Derivatives}
+The partial derivative of a function $f$ w.r.t $x$ at the point $(a,b)$ is,
+\[f_x(a,b)=\eval{\pdv{f}{x}}_{(a,b)}=\pdv{f(a,b)}{x}=\lim\limits_{h\to0}\frac{f(a+h,b)-f(a,b)}{h}\]
+It is possible that a function is discontinuous at some point but its partial derivative exists.\footnote{For the mixed partial derivatives to be equal, the first partial derivatives must exist and be continuous.}\\
+\begin{eg}
+	Find the partial derivative at $(0,0)$,
+	\[f(x,y)=\begin{cases}
+		\frac{xy}{x^2+y^2} &, (x,y)\neq(0,0)\\
+		0 &, (x,y)=(0,0)
+	\end{cases}\]
+\end{eg}
+\begin{explanation}
+	\[\pdv{f(0,0)}{x}=\lim\limits_{h\to0}\frac{f(h,0)-0}{h}=0\]
+	Hence, clearly the function is discontinuous at $(0,0)$ but the partial derivative exists.
+\end{explanation}
+
+\begin{eg}
+	Given,
+	\[f(x,y)=7x^2y^3+9xy^2+8xy+20e^x\cos y\]
+	Find $\pdv{f}{x}$, $\pdv{f}{y}$, $\pdv[2]{f}{x}$, $\pdv[2]{f}{y}$, $\pdv{f}{x}{y}$, $\pdv{f}{y}{x}$.
+\end{eg}
+\begin{explanation}
+	\[\begin{split}
+		f_x(x,y)&=\pdv{f}{x}=14xy^3+9y^2+8y+20e^x\cos y\\
+		f_y(x,y)&=\pdv{f}{y}=21x^2y^2+18xy+8x-20e^x\sin y\\
+		f_{xx}(x,y)&=\pdv[2]{f}{x}=14y^3+20e^x\cos y\\
+		f_{yy}(x,y)&=\pdv[2]{f}{y}=42x^2y+18x-20e^x\cos y\\
+		f_{xy}(x,y)&=\pdv{f}{x}{y}=\pdv{x}\left(\pdv{f}{y}\right)=42xy^2+18y+8-20e^x\sin y\\
+		f_{yx}(x,y)&=\pdv{f}{y}{x}=\pdv{y}\left(\pdv{f}{x}\right)=42xy^2+18y+8-20e^x\sin y\\
+	\end{split}\]
+\end{explanation}
+\begin{eg}
+	\[f(x,y,z)=\sqrt{x^2+y^2+z^2}\]
+	Show that, $\pdv[2]{f}{x}+\pdv[2]{f}{y}+\pdv[2]{f}{z}=0$
+\end{eg}
+\begin{explanation}
+	\[\pdv{f}{x}=\frac{x}{\sqrt{x^2+y^2+z^2}}\implies \pdv[2]{f}{x}=\frac{y^2+z^2}{(x^2+y^2+z^2)^\frac{3}{2}}\]
+	Similarly,
+	\[\pdv[2]{f}{y}=\frac{z^2+x^2}{(x^2+y^2+z^2)^\frac{3}{2}} \land \pdv[2]{f}{z}=\frac{x^2+y^2}{(x^2+y^2+z^2)^\frac{3}{2}}\]
+\end{explanation}
+\section{Composition of Functions}
+Consider a function $z=f(x,y)$ and $x=g(t)$ and $y=h(t)$, then,
+\[\dv{z}{t}=\pdv{z}{x}\dv{x}{t}+\pdv{z}{y}\dv{y}{t}\]
+\begin{eg}
+	\[z=e^{xy^2}\land x=t\cos t\land t\sin t\]
+	Calculate $\dv{z}{t}\vert_{t=\frac{\pi}{2}}$.
+\end{eg}
+\begin{explanation}
+	Clearly,
+	\[\begin{split}
+		\dv{z}{t}&=\pdv{z}{x}\dv{x}{t}+\pdv{z}{y}\dv{y}{t}\\
+		&=y^2e^{xy^2}[\cos t-t\sin t]+2xye^{xy^2}[\sin t+t\cos t]\\
+		\therefore \dv{z}{t}\vert_{t=\frac{\pi}{2}}&=-\frac{\pi^3}{8}
+	\end{split}\]
+\end{explanation}
+\begin{theorem}[Euler's Theorem for Homogeneous Functions]
+	If $f(x,y)$ is a homogeneous function of degree $n$, then,
+	\[\begin{split}
+		x\pdv{f}{x}+y\pdv{f}{y}&=nf\\
+		x^2\pdv[2]{f}{x}+2xy\pdv{f}{x}{y}+y^2\pdv[2]{f}{y}&=n(n-1)f
+	\end{split}\]
+\end{theorem}
+\begin{eg}
+	Given,
+	\[\ln u=\frac{x^3+y^3}{3x+4y}\]
+	Then find the value of $x\pdv{f}{x}+y\pdv{f}{y}$.
+\end{eg}
+\begin{explanation}
+	Let $z=\ln u$. Using Euler's Theorem,
+	\[x\pdv{z}{x}+y\pdv{z}{y}=2z\]
+	Now,
+	\[\pdv{z}{x}=\pdv{z}{u}\pdv{u}{x} \land \pdv{z}{y}=\pdv{z}{u}\pdv{u}{y}\]
+\end{explanation}
+\begin{eg}
+	Given,
+	\[u=\sin^{-1}\left(\frac{x+2y+3z}{x^8+y^8+z^8}\right)\]
+	Then prove that,
+	\[x\pdv{u}{x}+y\pdv{u}{y}+z\pdv{u}{z}=-7\tan u\]
+\end{eg}
+\begin{explanation}
+	Let $f=\sin u$. Using Euler's Theorem,
+	\[\begin{split}
+		x\pdv{f}{x}+y\pdv{f}{y}+z\pdv{f}{z}&=-7f\\
+		\implies x\pdv{f}{u}\pdv{u}{x}+y\pdv{f}{u}\pdv{u}{y}+z\pdv{f}{u}\pdv{u}{z}&=-7\sin u\\
+		\therefore x\pdv{u}{x}+y\pdv{u}{y}+z\pdv{u}{z}&=-7\tan u \quad \left(\pdv{f}{u}=\cos u\right)
+	\end{split}\]
+\end{explanation}
+\section{Jacobian}
+Consider two functions $u(x,y)$ and $v(x,y)$, then the Jacobian\footnote{Jo niche hai voh operator mein jaega, matlab w.r.t. whom} of $u,v$ w.r.t. $x,y$ is,
+\[\mathbb{J}(x,y)=\frac{\partial{(u,v)}}{\partial{(x,y)}}=\begin{vmatrix}
+	\pdv{u}{x} & \pdv{u}{y}\\
+	\pdv{v}{x} & \pdv{v}{y}
+\end{vmatrix}\]
+Moreover, composition of Jacobian works as, if $u(r,s)$ and $v(r,s)$ where $r=f(x,y)$ and $s=g(x,y)$,
+\[\frac{\partial(u,v)}{\partial(x,y)}=\frac{\partial(u,v)}{\partial(r,s)}\frac{\partial(r,s)}{\partial(x,y)}\]
+\begin{eg}[Polar Coordinates]
+	If $x=r\cos\theta$ and $y=r\sin\theta$, then find $\mathbb{J}(r,\theta)$.
+\end{eg}
+\begin{explanation}
+	\[\mathbb{J}(r,\theta)=\begin{vmatrix}
+		\cos\theta & -r\sin\theta\\
+		\sin\theta & r\cos\theta
+	\end{vmatrix}=r\]
+\end{explanation}
+\begin{eg}[Cylindrical Coordinates]
+	If $x=r\cos\theta$, $y=r\sin\theta$ and $z=z$, then find $\mathbb{J}(r,\theta,z)$.
+\end{eg}
+\begin{explanation}
+	\[\mathbb{J}(r,\theta, z)=r\]
+\end{explanation}
+\begin{eg}[Spherical Coordinates]
+	If $x=r\sin\theta\cos\phi$, $y=r\sin\theta\sin\phi$ and $z=r\cos\theta$ where $\theta\in [0,2\pi]\land \phi\in[0,\pi]$, then find $\mathbb{J}(r,\theta,\phi)$.
+\end{eg}
+\begin{explanation}
+	\[\mathbb{J}(r,\theta,\phi)=r^2\sin\theta\]
+\end{explanation}
+\section{Explicit and Implicit Functions}
+A function $f$ is said to be explicit if one variable can be represented in terms of other variables.\\
+If $f$ is implicit, such that $f(x,y)=c$, then $\dv{y}{x}=-\frac{f_x}{f_y}$.
+\begin{theorem}[Taylor's Theorem]
+	\[f(x,y)=f(a,b)+(x-a)\pdv{f(a,b)}{x}+(y-b)\pdv{f(a,b)}{y}+\frac{1}{2!}\left[(x-a)\pdv{x}+(y-b)\pdv{y}\right]^2f(a,b)+\ldots +R_n\]
+	Where,
+	\[R_n=\frac{1}{(n+1)!}\left[(x-a)\pdv{x}+(y-b)\pdv{y}\right]^{n+1}f(a+\theta(x-a),b+\phi(y-b)) \quad (\theta,\phi\in (0,1))\]
+\end{theorem}
+\begin{eg}
+	\[f(x,y)=x^3+x^2y+xy^2+y^2\]
+	Express $f$ in powers of $(x-1)$ and $(y+2)$.
+\end{eg}
+\begin{explanation}
+	Here, $a=1,b=-2$,
+	Thus,
+	\[f(1,-2)=7\implies f_x(1,-2)=3\land f_y(1,-2)=-7\implies f_{xx}(1,-2)=2\land f_{yy}(1,-2)=4\land f_{xy}(1,-2)=-2\]
+	Also,
+	\[f_{xxy}=6\land f_{yyy}=0\land f_{xxy}=2\land f_{yyx}=2\]
+	\[\begin{split}
+		f(x,y)&=7+3(x-1)+(-7)(y+2)+\frac{1}{2!}\left[2(x-1)^2+4(y+2)^2+(-2)(x-1)(y+2)\right]+\\
+		&\frac{1}{3!}\left[6(x-1)^3+3(2)(x-1)^2(y+2)+3(2)(x-1)(y+2)^2\right]\\
+		\therefore f(x,y)&=7+3(x-1)-7(y+2)+(x-1)^2+2(y+2)^2-(x-1)(y+2)+(x-1)^3+(x-1)^2(y+2)+(x-1)(y+2)^2
+	\end{split}\]
+\end{explanation}
+\section{Maxima and Minima of Two Variables}
+A function $f(x,y)$ is said to obtain minimum value of $f$ at point $(a,b)$, if there exists a neighborhood ($N$) of $(a,b)$ such that $f(a,b)<f(x,y)$ for all $(x,y)\in N$.\\
+A function $f(x,y)$ is said to obtain maximum value of $f$ at point $(a,b)$, if there exists a neighborhood ($N$) of $(a,b)$ such that $f(a,b)>f(x,y)$ for all $(x,y)\in N$.
+\subsection{Critical Point}
+Any point $(a,b)$ is said to be a critical point of $f$ if $\begin{cases}
+	\pdv{f(a,b)}{x}=0\\
+	\pdv{f(a,b)}{y}=0
+\end{cases}$
+\[A=\pdv[2]{f}{x}\land B=\pdv{f}{x}{y}\land C=\pdv[2]{f}{y}\]
+\[\begin{cases}
+	AC-B^2>0 &, \begin{cases}
+		A>0 &, \text{minima}\\
+		A<0 &, \text{maxima}
+	\end{cases} \\
+	AC-B^2<0 &, \text{neither max nor min, i.e. saddle point}\\
+	AC-B^2=0 &, \text{Further investigation}
+\end{cases}\]
+\begin{eg}
+	\[f(x,y)=(x-y)^2\]
+\end{eg}
+\begin{explanation}
+	\[\pdv{f}{x}=0\land \pdv{f}{y}=0\implies x=y\]
+	Critical points are $S=\{x\in\mathbb{R}|(x,x)\}$.
+	\[f_{xx}=2\land f_{xy}=-2\land f_{yy}=2\implies AC-B^2=0\]
+	Clearly, at $S$ is set of minima.
+\end{explanation}
+\begin{eg}
+	\[f(x,y)=x^4+y^4-2x^2-2y^2+4xy\]
+\end{eg}
+\begin{explanation}
+	\[\begin{split}
+		f_x&=4x^3-4x+4y=0\\
+		f_y&=4y^3-4y+4x=0
+	\end{split}\]
+	Thus, $x=-y$ and $(x,y)=\{(0,0),(\sqrt{2},-\sqrt{2}),(-\sqrt{2},\sqrt{2})\}$.
+	\[f_{xx}=12x^2-4\land f_{xy}=4\land f_{yy}=12y^2-4\]
+	At $(0,0)$, $AC-B^2=0$\\
+	At $(\sqrt{2},-\sqrt{2})$, $AC-B^2>0\land A>0$\\
+	At $(-\sqrt{2},\sqrt{2})$, $AC-B^2>0\land A>0$\\
+	Thus, $(\sqrt{2},-\sqrt{2})$ and $(-\sqrt{2},\sqrt{2})$ are points of minima.\\
+	For $(0,0)$, along $x$,
+	\[y=0\]
+\end{explanation}
+
+
+
+\include{Tut3.tex}
+
+
+
+\chapter{Multiple Integrals}
+\section{Integration}
+Consider a function $f$ bounded and defined on $[a,b]$. Then we can define the integral in the following way,
+\[\int\limits_a^b f(x)\dd{x}\]
+We define Partitions as,
+\[P=\{ a=x_0, x_1,\ldots, x_n=b \}\]
+We can define the lower sum as,
+\[m_i=\inf_{x\in [x_{i-1},x_i]}f(x) \; \land \; \Delta x_i=x_i-x_{i-1}\]
+Thus, the lower sum of $f$ w.r.t. partition $P$,
+\[L(P,f)=\sum\limits_{i=1}^n m_i\Delta x_i\]
+We can also define the upper sum as,
+\[M_i=\sup_{x\in [x_{i-1},x_i]}f(x)\]
+Thus, the upper sum of $f$ w.r.t. partition $P$,
+\[U(P,f)=\sum\limits_{i=1}^n M_i\Delta x_i\]
+The lower integral is defined as,
+\[\underline{\int\limits_a^b}f(x)\dd{x}=\sup_P L(P,f)\]
+The upper integral is defined as,
+\[\overline{\int\limits_a^b}f(x)\dd{x}=\inf_P L(P,f)\]
+Hence, we can define a relation as,
+\[\underline{\int\limits_a^b}f(x)\dd{x}\leq \int\limits_a^b f(x)\dd{x} \leq \overline{\int\limits_a^b}f(x)\dd{x}\]
+\begin{theorem}[Riemann Integrable]
+	A function $f$ is said to be Riemann Integrable if,
+	\[\underline{\int\limits_a^b}f(x)\dd{x}= \int\limits_a^b f(x)\dd{x} = \overline{\int\limits_a^b}f(x)\dd{x}\]
+\end{theorem}
+\begin{eg}
+	Show that $\int\limits_0^1 x^2\dd{x}$ is Riemann integrable.
+\end{eg}
+\begin{explanation}
+	\[x_i=\frac{i}{n}\; \land \; \Delta x_i=\frac{1}{n}\]
+	The partitions are,
+	\[P=\{\frac{0}{n}, \frac{1}{n}, \frac{2}{n},\ldots, \frac{n}{n}\}\]
+	\[m_i=\frac{(i-1)^2}{n^2} \; \land \; M_i=\frac{i^2}{n^2}\]
+	Thus, the lower sum is,
+	\[L(P,f)=\left(1-\frac{1}{n}\right)\left(2-\frac{1}{n}\right)\frac{1}{6}\implies \sup L(P,f)=\frac{1}{3}\]
+	Also, the upper sum is,
+	\[U(P,f)=\left(1+\frac{1}{n}\right)\left(2+\frac{1}{n}\right)\frac{1}{6}\implies \inf U(P,f)=\frac{1}{3}\]
+	Clearly,
+	\[\underline{\int\limits_0^1}x^2\dd{x}= \int\limits_0^1 x^2\dd{x} = \overline{\int\limits_0^1}x^2\dd{x}=\frac{1}{3}\]
+\end{explanation}
+\begin{eg}
+	\[f(x)=\begin{cases}
+		0 &, x\in \mathbb{Q}\cap [0,1]\\
+		1 &, x\in\mathbb{Q}^\complement \cap [0,1]
+	\end{cases}\]
+\end{eg}
+\begin{explanation}
+	Clearly the partitions are,
+	\[P=\{\frac{0}{n}, \frac{1}{n}, \frac{2}{n},\ldots, \frac{n}{n}\}\]
+	Also,
+	\[m_i=0 \; \land \; M_i=1\]
+	Thus, obviously, $L(P,f)\neq U(P,f)$ and hence the function is not Riemann Integrable.
+\end{explanation}
+If a function is not Riemann integrable, it does not mean that the integral does not exist.
+\section{Double Integrals}
+The double integral when $x\in[a,b]$ and $y\in[c,d]$ is defined as,
+\[\int\limits_{c}^d\int\limits_a^b f(x,y)\dd{x}\dd{y}\]
+The integral $\int\limits_{c}^d\int\limits_a^b f(x,y)\dd{x}\dd{y}$ and $\int\limits_{a}^b\int\limits_c^d f(x,y)\dd{y}\dd{x}$ are equal if $f$ is continuous.
+\subsection{X-Regular and Y-Regular}
+Consider the integral,
+\[\iint\limits_\Omega f(x,y)\dd{x}\dd{y}\]
+Where $\Omega$ is the region over which we are integrating.
+
+The interval $\Omega$ is said to be $x$-regular if $\Omega=\{(x,y): \; g(y)\leq x \leq h(y), \; c\leq y\leq d\}$ which means the integral is,
+\[\int\limits_c^d\int\limits_{g(y)}^{h(y)}f(x,y)\dd{x}\dd{y}\]
+
+The interval $\Omega$ is said to be $y$-regular if $\Omega=\{(x,y): \; g(x)\leq y \leq h(x), \; a\leq x\leq b\}$ which means the integral is,
+\[\int\limits_a^b\int\limits_{g(x)}^{h(x)}f(x,y)\dd{y}\dd{x}\]
+
+If $f(x,y)=1$, then $\iint\limits_\omega f(x,y)\dd{A}$ gives area.
+\begin{eg}
+	Evaluate the integral where $\omega$ is bounded by the triangle $y=0$, $x=1$ and $y=x$.
+	\[\iint\limits_\Omega x+y+xy\dd{A}\]
+\end{eg}
+\begin{explanation}
+	The region is defined by
+	\[x\in[0,1] \; \land \; 0\leq y\leq x\]
+	Thus, the integral is setup as,
+	\[\int\limits_0^1\int\limits_0^x x+y+xy\dd{y}\dd{x}\]
+	It can also be written as,
+	\[y\in[0,1] \; \land \; y\leq x\leq 1\]
+	Hence,
+	\[\int\limits_0^1\int_y^1 x+y+xy\dd{x}\dd{y}\]
+	So, we can say that the region $\Omega$ is both $x$-regular and $y$-regular.
+\end{explanation}
+\begin{eg}
+	Evaluate
+	\[\iint\limits_\Omega 2+4x\dd{A}\]
+	Where $\Omega$ is bounded by $y=x$ and $y=x^2$.
+\end{eg}
+\begin{explanation}
+	The region is defined by,
+	\[x\in[0,1] \; \land \; x^2\leq y\leq x\]
+	Thus, the integral is,
+	\[I=\int\limits_0^1\int\limits_{x^2}^x 2+4x\dd{y}\dd{x}=\frac{2}{3}\]
+\end{explanation}
+\begin{eg}
+	Find the area bounded by $y=2x^2$ and $y^2=4x$.
+\end{eg}
+\begin{explanation}
+	The region is defined by,
+	\[x\in [0,1] \; \land \; 2x^2\leq y \leq 2\sqrt{x}\]
+	Thus, the integral is,
+	\[I=\int\limits_0^1 \int\limits_{2x^2}^{2\sqrt{x}} \dd{y}\dd{x}=\frac{2}{3}\]
+\end{explanation}
+\begin{eg}
+	Find the volume of the solid $z=x^2+y^2$ over the bounded region $y=x$, $x=0$ and $x+y=2$.
+\end{eg}
+\begin{explanation}
+	Clearly the region is described by,
+	\[x\in [0,1] \; \land \; x\leq y \leq 2-x\]
+	Thus, the volume is given by the following double integral,
+	\[V=\int\limits_0^1\int\limits_{x}^{2-x}x^2+y^2\dd{y}\dd{x}=\frac{4}{3}\]
+\end{explanation}
+\begin{eg}
+	Evaluate
+	\[\int\limits_0^1\int\limits_y^1 \frac{\sin x}{x}\dd{x}\dd{y}\]
+\end{eg}
+\begin{explanation}
+	We can interchange the limits, 
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[samples=100, line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+			\begin{axis}[
+				x=1cm,y=1cm,
+				axis lines=middle,
+				xmin=-0.5,
+				xmax=2,
+				ymin=-0.5,
+				ymax=1.5,
+				xtick={-10,-9,...,10},
+				ytick={-2,...,10},]
+				\addplot[very thick, blue] {0};
+				\addplot[very thick, green] {1};
+				\addplot[very thick, red] {x};
+				\addplot[orange, very thick] coordinates {(1,2) (1,0)};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+	\[\begin{split}
+		\int\limits_0^1\int\limits_y^1 \frac{\sin x}{x}\dd{x}\dd{y}&=\int\limits_0^1\int\limits_0^x \frac{\sin x}{x}\dd{y}\dd{x}\\
+		&=1-\cos 1
+	\end{split}\]
+\end{explanation}
+\begin{eg}
+	Evaluate
+	\[\int\limits_0^\infty \frac{e^{-ax}-e^{-bx}}{x}\dd{x}\]
+\end{eg}
+\begin{explanation}
+	We can convert the integral into the following,
+	\[\begin{split}
+		\int\limits_0^\infty \frac{e^{-ax}-e^{-bx}}{x}\dd{x}&=\int\limits_0^\infty \int\limits_a^b e^{-yx}\dd{y}\dd{x}\\
+		&=\int\limits_a^b\int\limits_0^\infty e^{-yx}\dd{x}\dd{y}\\
+		=\ln\frac{b}{a}
+	\end{split}\]
+\end{explanation}
+\section{Change of Variables}
+Consider the integral,
+\[\iint f(x,y)\dd{x}\dd{y}\]
+Now, if $x=p_1(u,v)$ and $y=p_2(u,v)$, then the integral can be expressed as,
+\[\iint g(u,v)\mathbb{J}(u,v) \quad \left( \mathbb{J}(u,v)=\frac{\partial(x,y)}{\partial(u,v)} \right)\]
+\begin{theorem}[Gaussian Integral]
+	The function $f(x)=e^{-x^2}$ is called the Gaussian function. It does not have an elementary indefinite integral. But the total area under the area can be calculated.
+	\[\int\limits_0^\infty e^{-x^2}\dd{x}\]
+\end{theorem}
+\begin{proof}
+	Let,
+	\[\begin{split}
+		I&=\int\limits_0^\infty e^{-x^2}\dd{x}\\
+		I&=\int\limits_0^\infty e^{-y^2}\dd{y}\\
+		\implies I^2&=\left(\int\limits_0^\infty e^{-x^2}\dd{x}\right)\left(\int\limits_0^\infty e^{-y^2}\dd{y}\right)
+	\end{split}\]
+	Here, since the variables are independent, then the integral can be resolved into a double integral,
+	\[\begin{split}
+		I^2&=\int\limits_0^\infty\int\limits_0^\infty e^{-(x^2+y^2)}\dd{x}\dd{y}
+	\end{split}\]
+	Now, changing into polar coordinates, i.e.,
+	\[x=r\cos\theta \land y=r\sin\theta \land \mathbb{J}(u,v)=r\]
+	The limits are now changed to,
+	\[r\in(0,\infty) \land \theta in \left(0,\frac{\pi}{2}\right)\]
+	\[\begin{split}
+		I^2&=\int\limits_0^\frac{\pi}{2}\int\limits_0^\infty e^{-r^2}\cdot r\dd{r}\dd{\theta}\\
+		I^2&=\frac{\pi}{4}\\
+		\therefore I&=\frac{\sqrt{\pi}}{2}
+	\end{split}\]
+\end{proof}
+\subsection{Integrals using Polar Coordinate Systems}
+\subsubsection{Cardioid}
+	\begin{figure}[H]
+		\centering
+	\begin{tikzpicture}
+		\begin{polaraxis}[
+			width=0.7\textwidth, % Adjust the width of the plot
+			grid=both, % Show grid lines
+			minor y tick num=4, % Number of minor ticks on y-axis
+			minor x tick num=1, % Number of minor ticks on x-axis
+			xtick={0,0,45,90,135,180,225,270,315}, % Define x-axis tick marks in degrees
+			xticklabels={,0,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$,$\frac{3\pi}2$},
+			ytick={0,1,2},
+			yticklabels= \empty,
+			ymax=2.1, % Set the maximum value of r
+			smooth, % Smooth out the curve
+			scale=0.5,
+			]
+			
+			% Plot a cardioid with a=1
+			\addplot[mark=none,blue,domain=0:360] {1 + cos(x)};
+			\addplot[mark=none,red,domain=0:360] {1 - cos(x)};
+		\end{polaraxis}
+	\end{tikzpicture}
+	\caption*{\color{blue} $r=1+\cos\theta$ \color{black}and \color{red} $r=1-\cos\theta$}
+\end{figure}
+\begin{eg}
+	Evaluate $\iint 3y\dd{A}$ above the x-axis and below the cardioid $r=1-\cos\theta$.
+\end{eg}
+\begin{explanation}
+\begin{figure}[H]
+	\centering
+		\begin{tikzpicture}
+		\begin{polaraxis}[
+			width=0.7\textwidth, % Adjust the width of the plot
+			grid=both, % Show grid lines
+			minor y tick num=4, % Number of minor ticks on y-axis
+			minor x tick num=1, % Number of minor ticks on x-axis
+			xtick={0,0,45,90,135,180,225,270,315}, % Define x-axis tick marks in degrees
+			xticklabels={,0,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$,$\frac{3\pi}2$},
+			ytick={0,1,2},
+			yticklabels= \empty,
+			ymax=2.1, % Set the maximum value of r
+			smooth, % Smooth out the curve
+			scale=0.5,
+			]
+			
+			% Plot a cardioid with a=1
+			\addplot[mark=none,blue,domain=0:360, name path=G] {1 - cos(x)};
+			\addplot[red, name path=xAxis] coordinates {(0,0) (180,2)};
+			\addplot[fill=black, opacity=0.2] fill between [of=G and xAxis, soft clip={domain=-179:180}];
+		\end{polaraxis}
+	\end{tikzpicture}
+\end{figure}
+Here, 
+\[r\in (0,1-\cos\theta) \land \theta\in(0,\pi)\]
+Thus, the integral can be written as,
+\[\begin{split}
+	I&=\int\limits_0^\pi\int\limits_0^{1-\cos\theta}3r\sin\theta\cdot r\dd{r}\dd{\theta}\\
+	&=4
+\end{split}\]
+\end{explanation}
+\begin{eg}
+	Find the area common the cardioids, $r=1-\cos\theta$ and $r=1+\cos\theta$.
+\end{eg}
+\begin{explanation}
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{polaraxis}[
+				width=0.7\textwidth, % Adjust the width of the plot
+				grid=both, % Show grid lines
+				minor y tick num=4, % Number of minor ticks on y-axis
+				minor x tick num=1, % Number of minor ticks on x-axis
+				xtick={0,0,45,90,135,180,225,270,315}, % Define x-axis tick marks in degrees
+				xticklabels={,0,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$,$\frac{3\pi}2$},
+				ytick={0,1,2},
+				yticklabels= \empty,
+				ymax=2.1, % Set the maximum value of r
+				smooth, % Smooth out the curve
+				scale=0.5,
+				]
+				
+				% Plot a cardioid with a=1
+
+				\addplot[mark=none,blue,domain=90:180, name path =A1] {1 + cos(x)};
+				\addplot[mark=none,blue,domain=180:270, name path =A2] {1 + cos(x)};
+				\addplot[mark=none,red,domain=0:90, name path=B1] {1 - cos(x)};
+				\addplot[mark=none,red,domain=270:360, name path=B2] {1 - cos(x)};
+				\addplot[fill=black, opacity=0.2] fill between [of=A1 and B1, soft clip];
+				\addplot[fill=black, opacity=0.2] fill between [of=A2 and B2, soft clip];
+				\addplot[mark=none,blue,domain=0:360] {1 + cos(x)};
+				\addplot[mark=none,red,domain=0:360] {1 - cos(x)};
+			\end{polaraxis}
+		\end{tikzpicture}
+	\end{figure}
+	By symmetry,
+	\[\begin{split}
+		I&=4\int\limits_0^\frac{\pi}{2}\int\limits_0^{1-\cos\theta}r\dd{r}\dd{\theta}\\
+		&=\frac{3\pi}{4}-4
+	\end{split}\]
+\end{explanation}
+\section{Triple Integrals}
+\begin{theorem}
+	The conversion of Cartesian coordinates to spherical coordinates can be done by,
+	\[\begin{split}
+		x&=r\cos\theta\sin\phi\\
+		y&=r\sin\theta\sin\phi\\
+		z&=r\cos\phi
+	\end{split}\]
+	And the Jacobian is given by,
+	\[\mathbb{J}(r\theta,\phi)=r^2\sin\phi\]
+	And the angles lie between,
+	\[\theta \in [0,2\pi] \land \phi\in[0,\pi] \]
+\end{theorem}
+\begin{eg}
+	Evaluate $\iiint\limits_D x^2+y^2+z^2\dd{x}\dd{y}\dd{z}$ where $D=\{(x,y,z)\in\mathbb{R}^3 : x^2+y^2+z^2\leq 1\}$.
+\end{eg}
+\begin{explanation}
+	Converting to polar coordinates,
+	\[r\in[0,1]\land \theta\in[0,2\pi]\land \phi\in[0,\pi]\]
+	We get,
+	\[\begin{split}
+		I&=\int\limits_0^\phi\int\limits_0^{2\pi}\int\limits_0^1 r^2\cdot r^2\sin\phi\dd{r}\dd{\theta}\dd{\phi}\\
+		&=\left(\int\limits_0^1r^4\dd{r}\right)\left(\int\limits_0^{2\pi}\dd{\theta}\right)\left(\int\limits_0^\pi\sin\phi\dd{\phi}\right)\\
+		&=\frac{4\pi}{5}
+	\end{split}\]
+\end{explanation}
+\begin{eg}[Not sure]
+	Evaluate the integral $\iint\limits_D xy\sqrt{1-x-y}\dd{x}\dd{y}$, where $D$ is the region bounded by $x=0$, $y=0$ and $x+y=1$ using the transform $x+y=u$ and $xy=v$.
+\end{eg}
+\begin{explanation}
+	Using the transformation of variables, we get,
+	\[u(1-v)=0\land uv=0\land u=1\]
+	\[u\in[0,1]\land v\in[0,1]\]
+	The Jacobian is,
+	\[\mathbb{J}(u,v)=u\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_0^1\int\limits_0^1v\sqrt{1-u}\cdot u\dd{u}\dd{v}\\
+		&=\frac{2}{15}
+	\end{split}\]
+\end{explanation}
+\begin{eg}
+	Find the volume of the solid surrounded by the surface $\left(\frac{x}{a}\right)^\frac{2}{3}+\left(\frac{y}{b}\right)^\frac{2}{3}+\left(\frac{z}{c}\right)^\frac{2}{3}=1$.
+\end{eg}
+\begin{explanation}
+	First, choose,
+	\[\left(\frac{x}{a}\right)^\frac{2}{3}=u\land \left(\frac{y}{b}\right)^\frac{2}{3}=v\land \left(\frac{z}{c}\right)^\frac{2}{3}=w\]
+	Thus, the curve is,
+	\[S:u^2+v^2+w^2=1\quad(\text{A unit sphere})\]
+	The Jacobian is,
+	\[\mathbb{J}(u,v,w)=27abc\cdot u^2v^2w^2\]
+	The integral now is,
+	\[I=\iiint\limits_S 27abc\cdot u^2v^2w^2 \dd{V}\]
+	Now, converting to spherical coordinates,
+	\[u=r\cos\theta\sin\phi\land v=r\sin\theta\sin\phi\land w=r\cos\phi\]
+	The limits are
+	\[r\in[0,1]\land \theta\in[0,2\pi]\land \phi\in[0,\pi]\]
+	Thus, the final integral is,
+	\[\begin{split}
+		I&=27abc\int\limits_0^{2\pi}\int\limits_0^\pi\int\limits_0^1 (r^3\sin^2\phi\cos\phi\sin\theta\cos\theta)^2\cdot r^2\sin\phi\dd{r}\dd{\phi}\dd{\theta}]\\
+		&=27abc\left( \int\limits_0^1 r^8\dd{r} \right)\left(\int\limits_0^\pi \sin^5\phi\cos^2\phi\right)\left(\int\limits_0^{2\pi} \sin^2\theta\cos^2\theta\dd{\theta}\right)\\
+		&=\frac{4\pi abc}{35}
+	\end{split}\]
+\end{explanation}
+\section{Beta Function}
+The function is defined as,
+\[\beta(m,n)=\int\limits_0^1x^{m-1}(1-x)^{n-1}\dd{x}\quad m,n\geq 1\]
+\begin{theorem}[Symmetry]
+	\[\beta(m,n)=\beta(n,m)\]
+\end{theorem}
+\begin{theorem}
+	\[\beta(m,n)=2\int\limits_0^\frac{\pi}{2}\sin^{2m-1}\theta \cos^{2n-1}\theta\dd{\theta}\]
+\end{theorem}
+\section{Gamma Function}
+This is an extension to the factorial,
+\[\Gamma(n)=\int\limits_0^\infty e^{-x}x^{n-1}\dd{x}=(n-1)!\]
+\include{Tut6.tex}
+\end{document}

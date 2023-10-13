@@ -1,0 +1,608 @@
+\section{Tutorial-3}
+\subsection{Determine the domain and range of the following functions}
+\begin{asign}
+	\[f(x,y)=\frac{1}{x-y}\]
+\end{asign}
+\begin{anse}
+	Here,
+	\[x-y\neq0\implies x\neq y\]
+	Thus, the domain is,
+	\[\text{Dom}(f)=\mathbb{R}^2-\{x,y \in \mathbb{R}| x= y\}\]
+\end{anse}
+\begin{asign}
+	\[f(x,y,z)=\sqrt{1-x^2-y^2-z^2}\]
+\end{asign}
+\begin{anse}
+	Here,
+	\[1-x^2-y^2-z^2\geq 0\implies x^2+y^2+z^2\leq1\]
+	Thus,
+	\[\text{Dom}(f)=\{x,y,z\in \mathbb{R} | x^2+y^2+z^2\leq1\}\]
+\end{anse}
+\begin{asign}
+	\[f(x,y)=\sqrt{16-4x^2-y^2}\]
+\end{asign}
+\begin{anse}
+	Here,
+	\[16-4x^2-y^2\geq0\implies4x^2+y^2\leq16\]
+	Thus,
+	\[\text{Dom}(f)=\{x,y\in\mathbb{R}| 4x^2+y^2\leq16\}\]
+\end{anse}
+\begin{asign}
+	\[f(x,y)=\frac{\sqrt{4-x^2}}{y^2+3}\]
+\end{asign}
+\begin{anse}
+	Here,
+	\[4-x^2\geq0\implies x^2\leq4\implies x\in[-2,2]\]
+	Thus,
+	\[\text{Dom}(f)=\{x,y\in\mathbb{R}| x\in[-2,2]\}\]
+\end{anse}
+\subsection{Examine if the limits of the following functions $f(x,y)$ as $(x,y)\to(0,0)$ exist}
+\begin{asign}
+	\[f(x,y)=\begin{cases}
+		\frac{x^2+y^2}{x^2-y^2} &, x\neq y\\
+		0 &, x=y
+	\end{cases}\]
+\end{asign}
+\begin{anse}
+	Let the path of choice be $y=mx$,
+	\[\lim\limits_{(x,y)\to(0,0)}f(x,y)=\frac{1-m^2}{1+m^2}\]
+	Since the limit depends on the path, $f(x,y)$ is not continuous at $(0,0)$.
+\end{anse}
+\begin{asign}
+	\[f(x,y)=xy\left(\frac{x^2-y^2}{x^2+y^2}\right)\]
+\end{asign}
+\begin{anse}
+	Suppose $\epsilon>0$. Now choose $\delta=\sqrt{2\epsilon}$.
+	Let $\sqrt{x^2+y^2}<\delta$. Check,
+	\[\begin{split}
+		|f(x,y)|&=|xy\frac{x^2-y^2}{x^2+y^2}|\\
+		&<|xy| \quad \left(\because \frac{x^2-y^2}{x^2+y^2}<1\right)\\
+		&<\frac{1}{2}(x^2+y^2)\\
+		&<\frac{\delta^2}{2}=\epsilon
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	\[f(x,y)=\begin{cases}
+		x\sin\frac{1}{y}+y\sin\frac{1}{x} &, xy\neq0\\
+		0 &, xy=0
+	\end{cases}\]
+\end{asign}
+\begin{anse}
+		Suppose $\epsilon>0$. Now choose $\delta=\epsilon$.\\
+	Let $|x|+|y|<\delta$. Check,
+	\[\begin{split}
+		|f(x,y)-f(0,0)|&=|x\sin\frac{1}{y}+y\sin\frac{1}{x} -0|\\
+		&\leq | x\sin\frac{1}{y}|+|y\sin\frac{1}{x} |\\
+		&\leq |x|+|y|\\
+		&< \delta=\epsilon
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	\[f(x,y)=\frac{\sin(xy)}{x^2+y^2}\]
+\end{asign}
+\begin{anse}
+	Let the path of choice be $y=mx$,
+	\[\lim\limits_{(x,y)\to(0,0)}f(x,y)=\frac{m}{1+m^2}\]
+	Since the limit depends on the path, $f(x,y)$ is not continuous at $(0,0)$.
+\end{anse}
+\subsection{Examine the continuity of the following functions at $(0,0)$}
+\begin{asign}
+	\[f(x,y)=\begin{cases}
+		\frac{xy^3}{x^2+y^6} &, (x,y)\neq(0,0)\\
+		0 &, \text{otherwise}
+	\end{cases}\]
+\end{asign}
+\begin{anse}
+	Let the path of choice be $y^3=mx$, thus,
+	\[\lim\limits_{(x,y)\to(0,0)}f(x,y)=\frac{m}{1+m^2}\]
+	Since the limit depends on the path, $f(x,y)$ is not continuous at $(0,0)$.
+\end{anse}
+\begin{asign}
+	\[f(x,y)=\begin{cases}
+		x^2+y^2 &, 	x^2+y^2\leq 1\\
+		0 &, \text{otherwise}
+	\end{cases}\]
+\end{asign}
+\begin{anse}
+	Suppose $\epsilon>0$. Now choose, $\delta=\sqrt{\frac{\epsilon}{2}}$. Let $|x|<\delta\land |y|<\delta$. Check,
+	\[\begin{split}
+		|f(x,y)|&=|x^2+y^2|\\
+		&\leq |x|^2+|y|^2\\
+		&\leq 2\delta^2\\
+		&=\epsilon
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	\[f(x,y)=\begin{cases}
+		\frac{\sin^2(x-y)}{|x|+|y|} &, (x,y)\neq(0,0)\\
+		0 &, \text{otherwise}
+	\end{cases}\]
+\end{asign}
+\begin{anse}
+	Suppose $\epsilon>0$, Now choose $\delta=\epsilon$. Let $|x|+|y|<\delta$. Check,
+	\[\begin{split}
+		|f(x,y)|&=\left|\frac{\sin^2(x-y)}{|x|+|y|}\right|\\
+		&\leq \left|\frac{|x-y|^2}{|x|+|y|}\right|\\
+		&\leq |x|+|y| \quad (\because |x-y|^2 \leq (|x|+|y|)^2)\\
+		&<\delta=\epsilon
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	Find the partial derivative of the function $f(x,y,z)=\ln(x^2+2y+z^3)$.
+\end{asign}
+\begin{anse}
+	W.r.t. $x$,
+	\[\pdv{f}{x}=\frac{2x}{x^2+2y+z^3}\]
+	W.r.t. $y$,
+	\[\pdv{f}{y}=\frac{2}{x^2+2y+z^3}\]
+	W.r.t. $z$,
+	\[\pdv{f}{x}=\frac{3z^2}{x^2+2y+z^3}\]
+\end{anse}
+\begin{asign}
+	Show that the function $u=\ln(\sqrt{x^2+y^2})$ satisfy the Laplace equation $\left(\pdv[2]{u}{x}+\pdv[2]{u}{y}=0\right)$.
+\end{asign}
+\begin{anse}
+	Clearly,
+	\[\pdv{u}{x}=\frac{x}{x^2+y^2}\implies \pdv[2]{u}{x}=\frac{y^2-x^2}{x^2+y^2}\]
+	By symmetry,
+	\[\pdv[2]{u}{y}=\frac{x^2-y^2}{x^2+y^2}\]
+	Thus,
+	\[\pdv[2]{u}{x}+\pdv[2]{u}{y}=0\]
+\end{anse}
+\subsection{Find the first order partial derivatives of the following functions at the given points}
+\begin{asign}
+	\[f(x,y)=(3x^3+2xy)^3\quad (2,0)\]
+\end{asign}
+\begin{anse}
+	W.r.t. $x$,
+	\[\pdv{f}{x}=3(3x^3+2xy)^2(9x^2+2y)\implies \eval{\pdv{f}{x}}_{(2,0)}=2592\]
+	W.r.t $y$,
+	\[\pdv{f}{y}=3(3x^3+2xy)^2(2x)\implies\eval{\pdv{f}{y}}_{(2,0)}=288\]
+\end{anse}
+\begin{asign}
+	\[f(x,y)=\left(\frac{4x^2+2y^2}{xy}\right)\quad (\sqrt{3},\sqrt{2})\]
+\end{asign}
+\begin{anse}
+	Simplifying,
+	\[f(x,y)=2\cdot\left(\frac{2x}{y}+\frac{y}{x}\right)\]
+	W.r.t. $x$,
+	\[\pdv{f}{x}=2\left(\frac{2}{y}-\frac{y}{x^2}\right)\implies\eval{\pdv{f}{x}}_{(\sqrt{3},\sqrt{2})}=\frac{4\sqrt{2}}{3}\]
+	W.r.t. $y$,
+	\[\pdv{f}{y}=2\left(\frac{-2x}{y^2}+\frac{1}{x}\right)\implies \eval{\pdv{f}{y}}_{(\sqrt{3},\sqrt{2})}=-\frac{4\sqrt{3}}{3}\]
+\end{anse}
+\subsection{Calculate the partial derivatives of the following functions at $(0,0)$}
+\begin{asign}
+	\[f(x,y)=\begin{cases}
+		x\sin\frac{1}{x}+y\sin\frac{1}{y} &, xy\neq0\\
+		0 &, xy=0
+	\end{cases}\]
+\end{asign}
+\begin{anse}
+	W.r.t. $x$,
+	\[\begin{split}
+		\pdv{f}{x}&=\lim\limits_{h\to0}\frac{f(h,0)-f(0,0)}{h}\\
+		&=0
+	\end{split}\]
+	Similarly for $y$.
+\end{anse}
+\begin{asign}
+	\[f(x,y)=\begin{cases}
+		\frac{xy}{x^2+y^2} &, x^2+y^2\neq0\\
+		0 &, x=y=0
+	\end{cases}\]
+\end{asign}
+\begin{anse}
+	W.r.t. $x$,
+	\[\begin{split}
+		\pdv{f}{x}&=\lim\limits_{h\to0}\frac{f(h,0)-f(0,0)}{h}\\
+		&=0 
+	\end{split}\]
+	Similarly for $y$.
+\end{anse}
+\begin{asign}
+	\[f(x,y)=\begin{cases}
+		\frac{x^6-2y^4}{x^2+y^2} &, x^2+y^2\neq0\\
+		0 &, x=y=0
+	\end{cases}\]
+\end{asign}
+\begin{anse}
+	W.r.t. $x$,
+	\[\begin{split}
+		\pdv{f}{x}&=\lim\limits_{h\to0}\frac{f(h,0)-f(0,0)}{h}\\
+		&=\lim\limits_{h\to0}\frac{h^6}{h^2}\\
+		&=0
+	\end{split}\]
+	W.r.t. $y$,
+	\[\begin{split}
+		\pdv{f}{y}&=\lim\limits_{k\to0}\frac{f(0,k)-f(0,0)}{k}\\
+		&=\lim\limits_{k\to0} \frac{-2k^4}{k^2}\\
+		&=0
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	\[f(x,y)=\begin{cases}
+		y\sin\frac{1}{x} &, x\neq0\\
+		0 &, x=0
+	\end{cases}\]
+\end{asign}
+\begin{anse}
+	W.r.t. $x$,
+	\[\begin{split}
+		\pdv{f}{x}&=\lim\limits_{h\to0}\frac{f(h,0)-f(0,0)}{h}\\
+		&= \text{Not defined}
+	\end{split}\]
+	W.r.t. $y$,
+	\[\begin{split}
+		\pdv{f}{y}&=\lim\limits_{k\to0}\frac{f(0,k)-f(0,0)}{k}\\
+		&=0
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	\[f(x,y)=\begin{cases}
+		\frac{x^3+y^3}{x-y} &, x\neq y\\
+		0 &, x=y
+	\end{cases}\]
+\end{asign}
+\begin{anse}
+	\[\begin{split}
+		\pdv{f}{x}&=\lim\limits_{h\to0}\frac{f(h,0)-f(0,0)}{h}\\
+		&=0
+	\end{split}\]
+	Similarly for $y$.
+\end{anse}
+\begin{asign}
+	\[f(x,y)=\sqrt{|xy|}\]
+\end{asign}
+\begin{anse}
+	\[\begin{split}
+		\pdv{f}{x}&=\lim\limits_{h\to0}\frac{f(h,0)-f(0,0)}{h}\\
+		&=0
+	\end{split}\]
+	Similarly for $y$.
+\end{anse}
+\begin{asign}
+	If $F(x,y)=x^4y^2\sin^{-1}\frac{y}{x}$, then show that $x\pdv{F}{x}+y\pdv{F}{y}=6F$.
+\end{asign}
+\begin{anse}
+	Checking the condition for homogeneity,
+	\[F(\lambda x,\lambda y)=\lambda^6 F(x,y)\]
+	Thus, using Euler's Theorem for Homogeneous Functions,
+	\[x\pdv{F}{x}+y\pdv{F}{y}=6F\]
+\end{anse}
+\begin{asign}
+	If $F=\tan^{-1}\left(\frac{x^3+y^3}{x-y}\right)$, then prove that, \begin{enumerate}
+		\item $x\pdv{F}{x}+y\pdv{F}{y}=\sin2F$
+		\item $x^2\pdv[2]{F}{x}+2xy\pdv{f}{F}{y}+y^2\pdv[2]{F}{y}=2\cos3F\sin F$
+	\end{enumerate}
+\end{asign}
+\begin{anse}
+	Let $\tan F=z=\frac{x^3+y^3}{x-y}$, here, checking the condition for homogeneity for $z$,
+	\[z=y^2\frac{\left(\frac{x}{y}\right)^3+1}{\left(\frac{x}{y}\right)-1}\]
+	Using Euler's Theorem for Homogeneous Functions on $z$,
+	\[x\pdv{z}{x}+y\pdv{z}{y}=2z\]
+	Moreover,
+	\[\pdv{F}{x}=\frac{1}{\sec^2F}\pdv{z}{x} \land \pdv{F}{y}=\frac{1}{\sec^2F}\pdv{z}{y} \]
+	Replacing,
+	\[x\pdv{F}{x}+y\pdv{F}{y}=2\tan F \sec^2F=\sin 2F\]
+	Differentiating w.r.t. $x$ and $y$, then multiplying with $x$ and $y$ respectively we get,
+	\[\begin{split}
+		x\pdv{F}{x}+x^2\pdv[2]{F}{x}+xy\pdv{F}{x}{y}&=2\cos2F\cdot x\pdv{F}{x}\\
+		y\pdv{F}{y}+y^2\pdv[2]{F}{y}+xy\pdv{F}{x}{y}&=2\cos2F\cdot y\pdv{F}{y}\\
+	\end{split}\]
+	Adding the equations,
+	\[x^2\pdv[2]{F}{x}+2xy\pdv{F}{x}{y}+y^2\pdv[2]{F}{y}=\sin4F-\sin2F=2\cos3F\sin F\]
+\end{anse}
+\begin{asign}
+	If $F=\sin^{-1}\left(\frac{x+y}{\sqrt{x}+\sqrt{y}}\right)$, then prove that, \begin{enumerate}
+		\item $x\pdv{F}{x}+y\pdv{F}{y}=\frac{1}{2}\tan F$
+		\item $x^2\pdv[2]{F}{x}+2xy\pdv{F}{x}{y}+y^2\pdv[2]{F}{y}=-\frac{\sin F\cos 2F}{4\cos^3F}$
+	\end{enumerate}
+\end{asign}
+\begin{anse}
+	Let $\sin F=z=\frac{x+y}{\sqrt{x}+\sqrt{y}}$, here, checking the condition for homogeneity for $z$,
+	\[z=y^\frac{1}{2}\left( \frac{x+y}{\sqrt{x}+\sqrt{y}} \right)\]
+	Using Euler's Theorem for Homogeneous Functions on $z$,
+	\[x\pdv{z}{x}+y\pdv{z}{y}=\frac{z}{2}\]
+	Moreover,
+	\[\pdv{F}{x}=\frac{1}{\cos F}\pdv{z}{x} \land \pdv{F}{y}=\frac{1}{\cos F}\pdv{z}{y} \]
+	Replacing,
+	\[x\pdv{F}{x}+y\pdv{F}{y}=\frac{1}{2}\tan F\]
+	Differentiating w.r.t. $x$ and $y$, then multiplying with $x$ and $y$ respectively we get,
+	\[\begin{split}
+		x\pdv{F}{x}+x^2\pdv[2]{F}{x}+xy\pdv{F}{x}{y}&=\frac{1}{2}\sec^2 F\cdot x\pdv{F}{x}\\
+		y\pdv{F}{y}+y^2\pdv[2]{F}{y}+xy\pdv{F}{x}{y}&=\frac{1}{2}\sec^2 F\cdot y\pdv{F}{y}\\
+	\end{split}\]
+	Adding the equations,
+	\[x^2\pdv[2]{F}{x}+2xy\pdv{F}{x}{y}+y^2\pdv[2]{F}{y}=-\frac{\sin F\cos 2F}{4\cos^3F}\]
+\end{anse}
+\begin{asign}
+	If $u=\tan^{-1}\frac{y^2}{x}$, then prove that $x^2\pdv[2]{u}{x}+2xy\pdv{u}{x}{y}+y^2\pdv[2]{u}{y}=-\sin^2u\sin2u$.
+\end{asign}
+\begin{anse}
+	Let $\tan u=z=\frac{y^2}{z}$, here, checking the condition for homogeneity for $z$, we get $n=1$,
+	Using Euler's Theorem for Homogeneous Functions on $z$,
+	\[x\pdv{z}{x}+y\pdv{z}{y}=z\]
+	Moreover,
+	\[\pdv{u}{x}=\frac{1}{\sec^2u}\pdv{z}{x} \land \pdv{u}{y}=\frac{1}{\sec^2u}\pdv{z}{y} \]
+	Replacing,
+	\[x\pdv{u}{x}+y\pdv{u}{y}=\frac{\sin2u}{2}\]
+	Differentiating w.r.t. $x$ and $y$, then multiplying with $x$ and $y$ respectively we get,
+	\[\begin{split}
+		x\pdv{u}{x}+x^2\pdv[2]{u}{x}+xy\pdv{f}{x}{y}&=\cos2u\cdot x\pdv{u}{x}\\
+		y\pdv{F}{y}+y^2\pdv[2]{f}{y}+xy\pdv{f}{x}{y}&=\cos2u \cdot y\pdv{u}{y}\\
+	\end{split}\]
+	Adding the equations,
+	\[x^2\pdv[2]{u}{x}+2xy\pdv{u}{x}{y}+y^2\pdv[2]{u}{y}=-\sin^2u\sin2u\]
+\end{anse}
+\begin{asign}
+	If $u=u\left(\frac{x-y}{xy},\frac{z-x}{zx}\right)$, then show that $x^2\pdv{u}{x}+y^2\pdv{u}{y}+z^2\pdv{u}{z}=0$.
+\end{asign}
+\begin{anse}
+	Let $\frac{x-y}{xy}=a$ and $\frac{z-x}{zx}=b$, thus,
+	\[\begin{split}
+		\pdv{u}{x}&=\pdv{u}{a}\pdv{a}{x}+\pdv{u}{b}\pdv{b}{x}=\frac{1}{x^2}\left(\pdv{u}{a}-\pdv{u}{b}\right)\\
+		\pdv{u}{y}&=\pdv{u}{a}\pdv{a}{y}+\pdv{u}{b}\pdv{b}{y}=-\frac{1}{y^2}\pdv{u}{a}\\
+		\pdv{u}{z}&=\pdv{u}{a}\pdv{a}{z}+\pdv{u}{b}\pdv{b}{z}=\frac{1}{z^2}\pdv{u}{b}
+	\end{split}\]
+	Adding,
+	\[x^2\pdv{u}{x}+y^2\pdv{u}{y}+z^2\pdv{u}{z}=0\]
+\end{anse}
+\begin{asign}
+	If $z=f(x,y)$ and $x=e^u\cos v$, $y=e^u\sin v$, prove that $x\pdv{z}{v}+y\pdv{z}{u}=e^{2u}\pdv{z}{y}$ and $\left(\pdv{z}{v}\right)^2+\left(\pdv{z}{u}\right)^2= e^{-2u}\left[ \left(\pdv{z}{x}\right)^2 + \left(\pdv{z}{y}\right)^2\right]$.
+\end{asign}
+\begin{anse}
+	Clearly,
+	\[\begin{split}
+		\pdv{z}{v}&=\pdv{z}{x}\pdv{x}{v}+\pdv{z}{y}\pdv{y}{v}=\pdv{z}{x}(-e^u\sin v)+\pdv{z}{y}(e^u\cos v)  \\
+		\pdv{z}{u}&=\pdv{z}{x}\pdv{x}{u}+\pdv{z}{y}\pdv{y}{u}=\pdv{z}{x}(e^u\cos v)+\pdv{z}{y}(e^u\sin v)
+	\end{split}\]
+	Multiplying and adding,
+	\[x\pdv{z}{v}+y\pdv{z}{u}=e^{2u}\pdv{z}{y}\]
+	Squaring and adding,
+	\[\left(\pdv{z}{v}\right)^2+\left(\pdv{z}{u}\right)^2= e^{-2u}\left[ \left(\pdv{z}{x}\right)^2 + \left(\pdv{z}{y}\right)^2\right] \]
+\end{anse}
+\begin{asign}
+	Show that $f_{xy}(0,0)\neq f_{yx}(0,0)$ for the function $f(x,y)$ defined by
+	\[f(x,y)=\begin{cases}
+		x^2\tan^{-1}\left(\frac{y}{x}\right)-y^2\tan^{-1}\left(\frac{x}{y}\right) &, (x,y)\neq (0,0)\\
+		0 &, (x,y)= (0,0)
+	\end{cases}\]
+\end{asign}
+\begin{anse}
+	
+\end{anse}
+\subsection{Find the Jacobian of the following functions}
+\begin{asign}
+	\[u(x,y,z)=\frac{yz}{x} \; \land \; v(x,y,z)=\frac{zx}{y} \; \land \; w(x,y,z)=\frac{xy}{z}\]
+\end{asign}
+\begin{anse}
+	The Jacobian is given by,
+	\[\frac{\partial(u,v,w)}{\partial(x,y,z)}=\begin{vmatrix}
+		\frac{-yz}{x^2} & \frac{z}{x} & \frac{y}{x}\\
+		\frac{z}{y} & \frac{-zx}{y^2} & \frac{x}{y}\\
+		\frac{y}{z} & \frac{x}{z} & \frac{-xy}{z^2}
+	\end{vmatrix}=4\]
+\end{anse}
+\begin{asign}
+	\[u(r,\theta)=r\cos2\theta \; \land \; v(r,\theta)=r\sin2\theta\]
+\end{asign}
+\begin{anse}
+	The Jacobian is given by,
+	\[\frac{\partial{(u,v)}}{\partial{(x,y)}}=\begin{vmatrix}
+		\cos2\theta & -2r\sin\theta \\
+		\sin2\theta & 2r\cos\theta
+	\end{vmatrix}=2r\cos\theta \]
+\end{anse}
+\begin{asign}
+	If $u=xyz$, $v=x^2+y^2+z^2$, $w=x+y+z$, find $\frac{\partial(x,y,z)}{\partial(u,v,w)}$.
+\end{asign}
+\begin{anse}
+	First,
+	\[\frac{\partial(u,v,w)}{\partial(x,y,z)}=\begin{vmatrix}
+		yz & xz& xy\\
+		2x& 2y & 2z\\
+		1 & 1 & 1
+	\end{vmatrix}=-2(x-y)(y-z)(z-x)\]
+	Thus,
+	\[\frac{\partial(x,y,z)}{\partial(u,v,w)}=\frac{1}{\frac{\partial(u,v,w)}{\partial(x,y,z)}}=\frac{-1}{2(x-y)(y-z)(z-x)}\]
+\end{anse}
+\begin{asign}
+	If $x=u(1-v)$, $y=uv$, prove that $\mathbb{J}\mathbb{J}'=1$.
+\end{asign}
+\begin{anse}
+	First calculating $\mathbb{J}=\frac{\partial(x,y)}{\partial(u,v)}=\begin{vmatrix}
+	1-v & -u\\
+	v & u
+	\end{vmatrix}=u$.
+	Moreover, 
+	\[u=x+y \land v=\frac{y}{x+y}\]
+	Thus,
+	\[\mathbb{J}'=\frac{\partial(u,v)}{\partial(x,y)}=\begin{vmatrix}
+		1 & 1\\
+		\frac{-y}{(x+y)^2} & \frac{x}{(x+y)^2}
+	\end{vmatrix}=\frac{1}{x+y}=\frac{1}{u}\]
+	Hence, we can say that for the given set of variables,
+	\[\mathbb{J}\mathbb{J}'=1\]
+\end{anse}
+\begin{asign}
+	If $u=x^2-2y^2$,$v=2x^2-y^2$, where $x=r\cos\theta$, $y=r\sin\theta$, show that $\frac{\partial(u,v)}{\partial(r,\theta)}=6r^2\sin2\theta$.
+\end{asign}
+\begin{anse}
+	\[\begin{split}
+		\frac{\partial(u,v)}{\partial(r,\theta)}&=\frac{\partial(u,v)}{\partial(x,y)}\frac{\partial(x,y)}{\partial(r,\theta)}\\
+		&=\begin{vmatrix}
+			2x& -4y\\
+			4x & -2y
+		\end{vmatrix}r\\
+		&=r(12xy)\\
+		&=6r^3\sin2\theta
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	If $u=x\sqrt{1-y^2}+y\sqrt{1-x^2}$, $v=\sin^{-1}x+\sin^{-1}y$, then show that $u$ and $v$ are functionally related and find the relationship.
+\end{asign}
+\begin{anse}
+	Clearly,
+	\[\sin^{-1}u=v\]
+\end{anse}
+\subsection{Find $f_u$, $f_v$ and total derivative for the functions}
+\begin{asign}
+	\[f(x,y)=e^x\cos y \; , x=ue^v \; y=u+v-1\]
+\end{asign}
+\begin{anse}
+	Clearly,
+	\[\begin{split}
+		f_u&=\pdv{f}{x}\pdv{x}{u}+\pdv{f}{y}\pdv{y}{u}=e^x(e^v\cos y-\sin y)\\
+		f_v&=\pdv{f}{x}\pdv{x}{v}+\pdv{f}{y}\pdv{y}{v}=e^x(ue^v\cos y-\sin y)
+	\end{split}\]
+	The total derivative is,
+	\[\dd{f}=\pdv{f}{x}\dd{x}+\pdv{f}{y}\dd{y}=e^x\cos y\dd{x} -e^x\sin y\dd{y}\]
+\end{anse}
+\begin{asign}
+	\[f(x,y)=xy \; , x=e^{2u}\cos v \; , v=e^u\sin v\]
+\end{asign}
+\begin{anse}
+	Clearly,
+	\[\begin{split}
+		f_u&=\pdv{f}{x}\pdv{x}{u}+\pdv{f}{y}\pdv{y}{u}= 3xy \\
+		f_v&=\pdv{f}{x}\pdv{x}{v}+\pdv{f}{y}\pdv{y}{v}= xy(\cos2v)
+	\end{split}\]
+	The total derivative is,
+	\[\dd{f}=\pdv{f}{x}\dd{x}+\pdv{f}{y}\dd{y}=y\dd{x}+x\dd{y}\]
+\end{anse}
+\begin{asign}
+	\[f(x,y)=x\sinh y + y\cosh x \; , x=u^2+1 \; ,y=v^2\]
+\end{asign}
+\begin{anse}
+	Clearly,
+	\[\begin{split}
+		f_u&=\pdv{f}{x}\pdv{x}{u}+\pdv{f}{y}\pdv{y}{u}= 2u(\sinh y+y\sinh x) \\
+		f_v&=\pdv{f}{x}\pdv{x}{v}+\pdv{f}{y}\pdv{y}{v}= 2v(x\cosh y+\cosh x)
+	\end{split}\]
+	The total derivative is,
+	\[\dd{f}=\pdv{f}{x}\dd{x}+\pdv{f}{y}\dd{y}=(\sinh y+y\sinh x)\dd{x} + (x\cosh y+\cosh x)\dd{y}\]
+\end{anse}
+\subsection{Using change of variable, prove the following}
+\begin{asign}
+	If $u=f(e^{y-z},e^{z-x},e^{x-y})$ then prove that $\pdv{u}{x}+\pdv{u}{y}+\pdv{u}{z}=0$.
+\end{asign}
+\begin{anse}
+	Let $r=e^{y-z}$, $s=e^{z-x}$ and $t=e^{x-y}$, thus,
+	\[\begin{split}
+		\pdv{u}{x}&=-s\pdv{u}{s}+t\pdv{u}{t}\\
+		\pdv{u}{y}&=r\pdv{u}{r}-t\pdv{u}{t}\\
+		\pdv{u}{z}&=-r\pdv{u}{r}+s\pdv{u}{s}
+	\end{split}\]
+	Adding, we get,
+	\[\pdv{u}{x}+\pdv{u}{y}+\pdv{u}{z}=0\]
+\end{anse}
+\begin{asign}
+	Transform the equation $\pdv[2]{u}{x}+\pdv[2]{u}{y}=0$ into polar coordinates.
+\end{asign}
+\begin{anse}
+	Here, $x=r\cos\theta$ and $y=r\sin\theta$,
+	\[x^2+y^2=r^2\;\land \; \theta=\tan^{-1}\frac{y}{x}\]
+	Hence,
+	\[\pdv{r}{x}=\cos\theta \land \pdv{r}{y}=\sin\theta\land \pdv{\theta}{x}=\frac{-\sin\theta}{r}\land \pdv{\theta}{y}=\frac{\cos\theta}{r}\]
+	\[\begin{split}
+		\pdv{u}{x}&=\pdv{u}{r}\pdv{r}{x}+\pdv{u}{\theta}\pdv{\theta}{x}\\
+		\therefore \pdv{x}&=\cos\theta\pdv{r}-\frac{\sin\theta}{r}\pdv{\theta}\\
+		\pdv{u}{y}&=\pdv{u}{r}\pdv{r}{y}+\pdv{u}{\theta}\pdv{\theta}{y}\\
+		\therefore \pdv{y}&=\sin\theta\pdv{r}+\frac{\cos\theta}{r}\pdv{\theta}
+	\end{split}\]
+	Using the above operators, we get,
+	\[\begin{split}
+		\pdv[2]{u}{x}&=\cos\theta\pdv{r}\left( \cos\theta\pdv{u}{r}-\frac{\sin\theta}{r}\pdv{u}{\theta} \right)-\frac{\sin\theta}{r}\pdv{\theta} \left( \cos\theta\pdv{u}{r}-\frac{\sin\theta}{r}\pdv{u}{\theta}\right) \\
+		&=\cos^2\theta\pdv[2]{u}{r}-2\frac{\cos\theta\sin\theta}{r}\pdv{u}{r}{\theta}+\frac{\sin^2\theta}{r^2}\pdv[2]{u}{\theta}+\frac{\cos\theta\sin\theta}{r^2}\pdv{u}{\theta}+\frac{\sin^2\theta}{r}\pdv{u}{r}\\
+		\pdv[2]{u}{y}&=\sin\theta\pdv{r}\left( \sin\theta\pdv{u}{r}+\frac{\cos\theta}{r}\pdv{u}{\theta} \right)+\frac{\cos\theta}{r}\pdv{\theta} \left( \sin\theta\pdv{u}{r}+\frac{\cos\theta}{r}\pdv{u}{\theta}  \right)\\
+		&=\sin^2\theta\pdv[2]{u}{r}+2\frac{\cos\theta\sin\theta}{r}\pdv{u}{r}{\theta}+\frac{\cos^2\theta}{r^2}\pdv[2]{u}{\theta}-\frac{\cos\theta\sin\theta}{r^2}\pdv{u}{\theta}+\frac{\cos^2\theta}{r}\pdv{u}{r}
+	\end{split}\]
+	Finally on adding we get,
+	\[\pdv[2]{u}{r}+\frac{1}{r^2}\pdv[2]{u}{\theta}+\frac{1}{r}\pdv{u}{r}=0\]
+\end{anse}
+\begin{asign}
+	If $x-y=2e^\theta\cos\phi$ and $x+y=2ie^\theta\sin\phi$, then show that $\pdv[2]{u}{\theta}+\pdv[2]{u}{\phi}=4xy\pdv{u}{x}{y}$.
+\end{asign}
+\begin{anse}
+	Solving,
+	\[x=e^\theta e^{i\phi}\land y=e^\theta e^{-i\phi}\]
+	Thus,
+	\[\pdv{x}{\theta}=x\land \pdv{y}{\theta}=y\land \pdv{x}{\phi}=ix\land \pdv{y}{\phi}=iy\]
+	\[\begin{split}
+		\pdv{u}{\theta}&=\pdv{u}{x}\pdv{x}{\theta}+\pdv{u}{y}\pdv{y}{\theta}\\
+		\therefore \pdv{\theta}&=x\pdv{x}+y\pdv{y}\\
+		\pdv{u}{\phi}&=\pdv{u}{x}\pdv{x}{\phi}+\pdv{u}{y}\pdv{y}{\phi}\\
+		\therefore \pdv{\phi}&=i\left( x\pdv{x}+y\pdv{y} \right)
+	\end{split}\]
+	Using the above operators, we get,
+	\[\begin{split}
+		\pdv[2]{u}{\theta}&=x^2\pdv[2]{y}{x}+2xy\pdv{u}{x}{y}+y^2\pdv[2]{u}{y}+x\pdv{u}{x}+y\pdv{u}{y}\\
+		\pdv[2]{u}{\phi}&=-x^2\pdv[2]{y}{x}+2xy\pdv{u}{x}{y}-y^2\pdv[2]{u}{y}-x\pdv{u}{x}-y\pdv{u}{y}
+	\end{split}\]
+	Adding,
+	\[\pdv[2]{u}{\theta}+\pdv[2]{u}{\phi}=4xy\pdv{u}{x}{y}\]
+\end{anse}
+\subsection{Find $\dv{y}{x}$ for the following implicit functions}
+\begin{asign}
+	\[y^4+y^2-5y-x^2+4=0\] at $(1,1)$.
+\end{asign}
+\begin{anse}
+	Differentiating w.r.t. $x$ and $y$,
+	\[\begin{split}
+		f_x&=-2x\\
+		f_y&=4y^3+2y-5
+	\end{split}\]
+	Thus,
+	\[\begin{split}
+		\dv{y}{x}&=\frac{2x}{4y^3+2y-5}\\
+		\therefore \eval{\dv{y}{x}}_{(1,1)}&=2
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	\[xe^y+\sin(xy)+y-\ln 2=0\]
+	at $(0,\ln 2)$.
+\end{asign}
+\begin{anse}
+	Differentiating w.r.t. $x$ and $y$,
+	\[\begin{split}
+		f_x&=e^y+y\cos(xy)\\
+		f_y&=xe^y+x\cos(xy)+1
+	\end{split}\]
+	Thus,
+	\[\begin{split}
+		\dv{y}{x}&=-\frac{e^y+y\cos(xy)}{xe^y+x\cos(xy)+1}\\
+		\therefore \eval{\dv{y}{x}}_{(0,\ln2)}&=-(2+\ln2)
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	Let $f(x,y)=3x^2+4y^2$. Use the differential of $f$ at the point $(2,1)$ to estimate the values $f(1.93,-1.05)$ and $f(2.07,-0.99)$.
+\end{asign}
+\begin{anse}
+	Here
+\end{anse}
+\begin{asign}
+	Find the quadratic Taylor's polynomial approximation of $e^{-x^2-2y^2}$ near $(0,0)$.
+\end{asign}
+\begin{anse}
+	
+\end{anse}
+\begin{asign}
+	Using Taylor’s formula, find quadratic and cubic approximations $e^x\sin y$ at origin. Estimate the error in approximations if $|x|\leq0.1$, $|y|\leq0.2$.
+\end{asign}
+\begin{anse}
+	
+\end{anse}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

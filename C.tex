@@ -1,0 +1,117 @@
+\documentclass[a4paper, twoside]{report}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{mathrsfs}
+\usepackage{pgfplots}
+\usepgfplotslibrary{polar}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows,patterns, backgrounds, calc,fadings,shadows.blur, shapes}
+\theoremstyle{plain}
+\usepackage[most]{tcolorbox}
+\usepackage{physunits}
+\usepackage{float}
+\usepackage[stable]{footmisc}
+\usepackage{xcolor}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{steinmetz}
+\usepackage{adjustbox}
+\usepackage{listings}
+\usepackage[version=4]{mhchem}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand*{\Perm}[2]{{}^{#1}\!P_{#2}}%
+\newcommand*{\Comb}[2]{{}^{#1}C_{#2}}%
+\mdfsetup{skipabove=1em,skipbelow=0em}
+\tcbuselibrary{xparse}
+\usepackage[font=small,labelfont=bf,margin=\parindent,tableposition=top]{caption}
+\newenvironment{solution}
+{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Solution]}
+	{\end{proof}}
+
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily\color{blue!70!black}, bodyfont=\normalfont,
+mdframed={
+	linewidth=2pt,
+	rightline=false, topline=false, bottomline=false,
+	linecolor=blue, backgroundcolor=blue!5,
+}
+]{thmbluebox}
+\declaretheorem[style=thmbluebox, numbered=no, name=Example]{eg}
+
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily\color{blue!70!black}, bodyfont=\normalfont,
+numbered=no,
+mdframed={
+	linewidth=2pt,
+	rightline=false, topline=false, bottomline=false,
+	linecolor=blue, backgroundcolor=blue!1,
+},
+]{thmexplanationbox}
+\declaretheorem[style=thmexplanationbox, name=Solution]{tmpexplanation}
+\newenvironment{explanation}[1][]{\vspace{-10pt}\begin{tmpexplanation}}{\end{tmpexplanation}}
+
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily\color{red!70!black}, bodyfont=\normalfont,
+mdframed={
+	linewidth=2pt,
+	rightline=false, topline=false, bottomline=false,
+	linecolor=red, backgroundcolor=red!5,
+}
+]{thmredbox}
+\declaretheorem[style=thmredbox, name=Theorem]{theorem}
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily\color{red!70!black}, bodyfont=\normalfont,
+numbered=no,
+mdframed={
+	linewidth=2pt,
+	rightline=false, topline=false, bottomline=false,
+	linecolor=red, backgroundcolor=red!2,
+},
+qed=\qedsymbol
+]{thmproofbox}
+\declaretheorem[style=thmproofbox, name=Proof]{replacementproof}
+\renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily\color{brown!70!black}, bodyfont=\normalfont,
+mdframed={
+	linewidth=2pt,
+	rightline=false, topline=false, bottomline=false,
+	linecolor=brown, backgroundcolor=brown!5,
+}
+]{thmbrownbox}
+\declaretheorem[style=thmbrownbox, numbered=no, name=Question]{asign}
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily\color{brown!70!black}, bodyfont=\normalfont,
+numbered=no,
+mdframed={
+	linewidth=2pt,
+	rightline=false, topline=false, bottomline=false,
+	linecolor=brown, backgroundcolor=brown!1,
+},
+]{thmansbox}
+\declaretheorem[style=thmansbox, name=Answer]{thmbrown}
+\newenvironment{anse}[1][]{\vspace{-10pt}\begin{thmbrown}}{\end{thmbrown}}
+
+\tikzset {_uty0p60aj/.code = {\pgfsetadditionalshadetransform{ \pgftransformshift{\pgfpoint{0 bp } { 0 bp }  }  \pgftransformrotate{-270 }  \pgftransformscale{2 }  }}}
+\pgfdeclarehorizontalshading{_zo7gli6ny}{150bp}{rgb(0bp)=(0.6,0.85,1);
+rgb(53.66071428571429bp)=(0.6,0.85,1);
+rgb(61.60714285714286bp)=(0,0.5,0.5);
+rgb(100bp)=(0,0.5,0.5)}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt 
+
+\usepackage[hidelinks]{hyperref}

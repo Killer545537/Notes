@@ -1,0 +1,437 @@
+\section{Tutorial-6}
+\subsection{Evaluate the double integrals}
+\begin{asign}
+	$\iint\limits_Rx^2\dd{A}$, where $R$ is the region bounded by $y=x^2$, $y=x+2$.
+\end{asign}
+\begin{anse}
+	The region described is,
+	\[x\in[-1,2] \land x^2\leq y\leq x+2\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_{-1}^2\int\limits_{x^2}^{x+2}x^2\dd{y}\dd{x}\\
+		&=\frac{163}{60}
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	$\iint\limits_R (x^2+y^2)\dd{A}$, where $R:0\leq y\leq \sqrt{1-x^2}, \; 0\leq x\leq 1$.
+\end{asign}
+\begin{anse}
+	Clearly,
+	\[\begin{split}
+		I&=\int\limits_0^1\int\limits_{0}^{\sqrt{1-x^2}}x^2+y^2\dd{y}\dd{x}\\
+		&=\frac{\pi}{8}
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	$\iint\limits_R a^2-x^2-y^2\dd{A}$, where $R$ is the region $x^2+y^2\leq a^2$.
+\end{asign}
+\begin{anse}
+	The region described is,
+	\[x\in[-1,1] \land -\sqrt{a^2-x^2}\leq y\leq \sqrt{a^2-x^2} \quad(\because \text{ Upper and lower parts of the disc})\]
+	Thus,
+	\[\begin{split}
+		I&=\int\limits_{-1}^1\int\limits_{-\sqrt{a^2-x^2}}^{\sqrt{a^2-x^2}}a^2-x^2-y^2\dd{y}\dd{x}\\
+		&=\text{Something}
+	\end{split}\]
+	The better way is to change into polar coordinates, since the region described is a complete circle,
+	\[r\in[0,a] \land \theta\in[0,2\pi]\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_0^a\int\limits_0^{2\pi}(a^2-r^2)\cdot r\dd{\theta}\dd{r}\\
+		&=\left(\int\limits_0^aa^2r-r^3\dd{r}\right)\left(\int\limits_0^{2\pi}\dd{\theta}\right)\\
+		&=\frac{\pi a^4}{2}
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	$\iint\limits_R xy\dd{x}\dd{y}$, where $R$ is the region bounded by $x$-axis, ordinate $x=2a$ and the curve $x^2=4ay$.
+\end{asign}
+\begin{anse}
+	The region described is,
+	\[y\in[0,a]\land 2\sqrt{ay}\leq x\leq 2a\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_0^a\int\limits_{2\sqrt{ay}}^{2a}xy\dd{x}\dd{y}\\
+		&=\frac{a^4}{3}
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	$\iint\limits_0^R x^2\dd{x\dd{y}}$, where $R$ is the region in the first quadrant bounded by the lines $x=y$, $y=0$, $x=8$ and the curve $xy=16$.
+\end{asign}
+\begin{anse}
+	The region can be described in the following way,
+	\[\left( x\in[0,4] \land 0\leq y\leq x \right) \land \left( x\in[4,8]\land 0\leq y \leq \frac{16}{x}\right)\]
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[samples=150, line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+			\begin{axis}[
+				x=1cm,y=1cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xmin=-0,
+				xmax=8.2,
+				ymin=-0,
+				ymax=4.2,
+				xtick={-7,-6,...,10},
+				ytick={-4,-3,...,10},
+				scale=0.5,]
+				\addplot[very thick, blue, name path=line, domain=0:4] plot(\x, \x);
+				\addplot[very thick, red, name path=hyper, domain=4:8] {16/x};
+				\addplot[very thick, purple, name path=xAxis, domain=0:8] {0};
+				\draw[dashed] (8,-2) -- (8,2);
+				\addplot[fill=orange, opacity=0.2] fill between[of=xAxis and line, soft clip={domain=0:4}];
+				\addplot[fill=green, opacity=0.2] fill between[of=xAxis and hyper, soft clip={domain=4:8}];
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_0^4\int\limits_0^xx^2\dd{y}\dd{x}+\int\limits_4^8\int\limits_0^\frac{16}{x}x^2\dd{y}\dd{x}\\
+		&=448
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	$\iint r^3\dd{r}\dd{\theta}$, over the area included between $r=2\sin\theta$ and $r=4\sin\theta$.
+\end{asign}
+\begin{anse}
+	Clearly,
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{polaraxis}[
+				width=0.7\textwidth, % Adjust the width of the plot
+				grid=both, % Show grid lines
+				minor y tick num=4, % Number of minor ticks on y-axis
+				minor x tick num=1, % Number of minor ticks on x-axis
+				xtick={0,0,45,90,135,180,225,270,315}, % Define x-axis tick marks in degrees
+				xticklabels=\empty,
+				xmin=1,
+				xmax=179,
+				ytick={0,1,2,3,4},
+				yticklabels= \empty,
+				ymax=4.1, % Set the maximum value of r
+				smooth, % Smooth out the curve
+				scale=0.5,
+				]
+				
+				\addplot[blue, name path=upper, domain=0:360, samples=100] {4*sin(x)};
+				\addplot[red, name path=lower, domain=0:360, samples=100] {2*sin(x)};
+				\addplot[fill=black, opacity=0.2] fill between[of=upper and lower, soft clip={domain=-179:179}];
+			\end{polaraxis}
+		\end{tikzpicture}
+	\end{figure}
+	\[\theta\in [0,\pi]\land 2\sin\theta \leq r\leq 4\sin\theta\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_0^\pi\int\limits_{2\sin\theta}^{4\sin\theta}r^3\dd{r}\dd{\theta}\\
+		&=\frac{90\pi}{4}
+	\end{split}\]
+\end{anse}
+\subsection{Evaluate the following integrals by changing the order of integration if needed}
+\begin{asign}
+	\[\int\limits_0^3\int\limits_{-y}^yx^2+y^2\dd{x}\dd{y}\]
+\end{asign}
+\begin{anse}
+	Here the limits are,
+	\[y\in[0,3]\land -y\leq x\leq y\]
+	These are equivalent to,
+	\[\left(x\in[-3,0]\land -x\leq y\leq 3\right)\land \left(x\in[0,3]\land x\leq y\leq 3\right)\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_{-3}^0\int\limits_{-x}^3x^2+y^2\dd{y}\dd{x}+\int\limits_{0}^3\int\limits_{x}^3x^2+y^2\dd{y}\dd{x}\\
+		&=\frac{54}{3}
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	\[\int\limits_0^1\int\limits_2^{4-2x}\dd{y}\dd{x}\]
+\end{asign}
+\begin{anse}
+	Here the limits are,
+	\[x\in[0,1]\land 2\leq y\leq 4-2x\]
+	These are equivalent to,
+	\[y\in[2,4]\land 0\leq x\leq \frac{4-y}{2}\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_2^4\int\limits_0^{\frac{4-y}{2}}\dd{x}\dd{y}\\
+		&=1
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	\[\int\limits_0^\frac{3}{2}\int\limits_0^{9-4x^2}16x\dd{y}\dd{x}\]
+\end{asign}
+\begin{anse}
+	Here the limits are,
+	\[x\in[0,\frac{3}{2}]\land 0\leq y\leq 9-4x^2\]
+	These are equivalent to,
+	\[y\in[0,9]\land 0\leq x\leq \frac{\sqrt{9-y}}{2}\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_0^9\int\limits_0^{\frac{\sqrt{9-y}}{2}}16x\dd{x}\dd{y}\\
+		&=81
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	\[\int\limits_0^2\int\limits_0^{4-x^2}\frac{xe^{2y}}{4-y}\dd{y}\dd{x}\]
+\end{asign}
+\begin{anse}
+	Here the limits are,
+	\[x\in[0,2]\land 0\leq y\leq 4-x^2\]
+	These are equivalent to,
+	\[y\in[0,4]\land 0\leq x\leq \sqrt{4-y}\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_0^4\int\limits_0^{\sqrt{4-y}}\frac{xe^{2y}}{4-y}\dd{x}\dd{y}\\
+		&=\frac{e^8}{4}-\frac{1}{4}
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	\[\int\limits_{-a}^a\int\limits_0^{\sqrt{a^2-y^2}}f(x,y)\dd{x}\dd{y}\]
+\end{asign}
+\begin{anse}
+	Here the limits are,
+	\[y\in[-a,a]\land 0\leq x\leq \sqrt{a^2-y^2}\]
+	These are equivalent to,
+	\[x\in[0,a]\land -\sqrt{a^2-x^2}\leq y\leq \sqrt{a^2-x^2}\]
+	Thus, the integral is,
+	\[I=\int\limits_0^a\int\limits_{-\sqrt{a^2-x^2}}^{\sqrt{a^2-x^2}}f(x,y)\dd{y}\dd{x}\]
+\end{anse}
+\begin{asign}
+	\[\int\limits_0^1\int\limits_{e^x}^e\frac{1}{\ln y}\dd{y}\dd{x}\]
+\end{asign}
+\begin{anse}
+	Here the limits are,
+	\[x\in[0,1]\land e^x\leq y\leq e\]
+	These are equivalent to,
+	\[y\in[1,e]\land 0\leq x\leq \ln y\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_1^e\int\limits_0^{\ln y}\frac{1}{\ln y}\dd{x}\dd{y}\\
+		&=e-1
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	By changing the order of integration of $\int\limits_0^\infty\int\limits_0^\infty e^{-xy}\sin px\dd{x}\dd{y}$, show that $\int\limits_0^\infty \frac{\sin px}{x}=\frac{\pi}{2}$.
+\end{asign}
+\begin{anse}
+	Let,
+	\[I=\int\limits_0^\infty\int\limits_0^\infty e^{-xy}\sin px\dd{x}\dd{y}\]
+	Changing the order of integration we get,
+	\[\begin{split}
+		I&=\int\limits_0^\infty\int\limits_0^\infty e^{-xy}\sin px\dd{y}\dd{x}\\
+		&=\int\limits_0^\infty \sin px \frac{-1}{x}\eval{e^{-xy}}_{0}^{\infty}\dd{x}\\
+		\therefore I&=\int\limits_0^\infty \frac{\sin px}{x}\dd{x}
+	\end{split}\]
+	Integrating the original integral,
+	\[\begin{split}
+		I&=\int\limits_0^\infty \eval{\frac{e^{-yx}}{y^2-p^2}(-y\sin px-p\cos px)}_{0}^{\infty} \dd{y}\\
+		\therefore I&=\frac{\pi}{2}
+	\end{split}\]
+	Thus, also,
+	\[\int\limits_0^\infty \frac{\sin px}{x}=\frac{\pi}{2}\]
+\end{anse}
+\subsection{Find the volume of the following}
+\begin{asign}
+	Region bounded above by the cylinder $z=x^2$ and below by the region enclosed by the parabola $y=2-x^2$ and the line $y=x$ in the $xy$ plane.
+\end{asign}
+\begin{anse}
+	Clearly the integral set-up is,
+	\[I=\iint\limits_\Omega x^2\dd{A}\]
+	The region $\Omega$ can be described as,
+	\[x\in[-2,1]\land x\leq y\leq 2-x^2\]
+	Integrating,
+	\[\begin{split}
+		I&=\int\limits_0^1\int\limits_x^{2-x^2} x^2\dd{y}\dd{x}\\
+		&=\frac{63}{20}
+	\end{split}\]
+\end{anse}
+\subsection{Use the given transformations to transform the integrals and evaluate them}
+\begin{asign}
+	$u=3x+2y$, $v=x+4y$ and $I=\iint\limits_R (3x^2+14xy+8y^2)\dd{A}$ where $R$ is the region in the first quadrant bounded by the lines $y+\frac{3x}{2}=1$, $y+\frac{3x}{2}=3$, $y+\frac{x}{4}=0$ and $y+\frac{x}{4}=1$.
+\end{asign}
+\begin{anse}
+	The area bound is a parallelogram,
+	\[x=\frac{4u-2v}{10}\land y=\frac{3v-u}{10}\]
+	The limits are,
+	\[u\in[2,6]\land v\in[0.4]\]
+	The Jacobian is,
+	\[\mathbb{J}(u,v)=\frac{\partial(x,y)}{\partial(u,v)}=\begin{vmatrix}
+		\frac{2}{5} & \frac{-1}{5}\\
+		\frac{-1}{10} & \frac{3}{10}
+	\end{vmatrix}=\frac{1}{10}\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_2^6\int\limits_0^4 uv\cdot\frac{1}{10}\dd{v}\dd{u}\\
+		&=12.8
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	$u=x+2y$, $v=x-y$ and $I=\int\limits_0^\frac{2}{3}\int\limits_y^{2-2y}(x+2y)e^{y-x}\dd{A}$.
+\end{asign}
+\begin{anse}
+	The limits are,
+	\[u\in[0,2]\land v\in[0,u]\]
+	The Jacobian is,
+	\[\mathbb{J}(u,v)=\frac{1}{J(x,y)}=\frac{1}{\begin{vmatrix}
+			1 & 2\\
+			1 & -1
+	\end{vmatrix}}=\frac{-1}{3}\implies |\mathbb{J}(u,v)|=\frac{1}{3}\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_0^2\int\limits_0^u ue^{-v}\cdot \frac{1}{3}\dd{v}\dd{u}\\
+		&=\frac{3e^{-2}+1}{3}
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	$u=xy$, $v=x^2-y^2$ and $I=\iint\limits_R(x^2+y^2)\dd{A}$, where $R$ is the region bounded by $xy=1$, $xy=2$, $x^2-y^2=1$ and $x^2-y^2=2$.
+\end{asign}
+\begin{anse}
+	The limits are,
+	\[u\in[1,2]\land v\in[1,2]\]
+	The Jacobian is,
+	\[\mathbb{J}(u,v)=\frac{1}{\mathbb{J}(x,y)}=\frac{1}{\begin{vmatrix}
+			y& x\\
+			2x & -2y
+	\end{vmatrix}}=\frac{-1}{2(x^2+y^2)} \implies |\mathbb{J}(u,v)|=\frac{1}{2(x^2+y^2)}\]
+	The integral is,
+	\[\begin{split}
+		I&=\int_1^2\int_1^2 (x^2+y^2)\cdot \frac{1}{2(x^2+y^2)} \dd{v}\dd{u}\\
+		&=\frac{1}{2}
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	$x=au$, $y=bv$, $z=cw$, and $I=\iiint_D \dd{V}$ where $D$ is the ellipsoid : $\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$.
+\end{asign}
+\begin{anse}
+	The Jacobian is,
+	\[\mathbb{J}(u,v,w)=\frac{1}{\begin{vmatrix}
+			a & 0 & 0\\
+			0 & b & 0\\
+			0 & 0 & c
+	\end{vmatrix}}=abc \]
+	The ellipsoid is converted to,
+	\[S: u^2+v^2+w^2=1\]
+	Which is a unit sphere.
+	The integral is,
+	\[\begin{split}
+		I&=\iiint_{S}abc\dd{V}\\
+		&=\frac{4abc}{3}\pi
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	$u=x$, $v=xy$, $w=3z$ and $I=\iiint_D x^2y+3xyz\dd{V}$ where $D=\{(x,y,z)\in\mathbb{R}^3 : 1\leq x \leq 2, 0\leq xy\leq 2, 0\leq z\leq 1 \}$.
+\end{asign}
+\begin{anse}
+	The limits are,
+	\[u\in[1,2]\land v\in[0,2]\land w\in[0,3]\]
+	The Jacobian is,
+	\[\mathbb{J}(u,v,w)=\frac{1}{3u}\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_0^3\int\limits_0^2\int\limits_1^2v+\frac{vw}{u}\dd{u}\dd{v}\dd{w}\\
+		&=2+3\ln 2
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	Using appropriate transformation evaluate $\iint_R\dd{A}$, where $R$ is the parallelogram with vertices $(1,0)$, $(3,1)$, $(2,2)$ and $(0,1)$.
+\end{asign}
+\begin{anse}
+	The equations for the parallel lines are,
+	\[x+y=1\land x+y=4 \land x-2y=1\land x-2y=-1\]
+	Thus, consider the transformation,
+	\[u=x+y\land v=x-2y\]
+	Thus, the limits are,
+	\[u\in[1,4]\land v\in [-1,1]\]
+	The Jacobian is,
+	\[\mathbb{J}(u,v)=\frac{1}{\mathbb{J}(x,y)}=\frac{-1}{3}\implies |\mathbb{J}|=\frac{1}{3}\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_1^4\int\limits_{-1}^1\frac{1}{3}\dd{v}\dd{u}\\
+		&=2
+	\end{split}\]
+\end{anse}
+\subsection{Evaluate the following volume integrals}
+\begin{asign}
+	$\iiint\limits_D (z^2x^2+z^2y^2)\dd{V}$, where $D=\{(x,y,z)\in\mathbb{R}^3:x^2+y^2\leq 1, -1\leq z\leq 1\}$.
+\end{asign}
+\begin{anse}
+	Converting to cylindrical coordinates,
+	\[r\in[0,1]\land \theta\in[0,2\pi]\land z\in[-1,1]\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_{-1}^1\int\limits_0^{2\pi}\int\limits_0^1r^2z^2\cdot r\dd{r}\dd{\theta}\dd{z}\\
+		&=\frac{\pi}{3}
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	$\iiint\limits_D xyz\dd{V}$, where $D=\{(x,y,z)\in\mathbb{R}^3:x^2+y^2\leq1, 0\leq z\leq x^2+y^2\}$.
+\end{asign}
+\begin{anse}
+	Converting to cylindrical coordinates,
+	\[r\in[0,1]\land \theta\in[0,2\pi]\land z\in[0,r^2]\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_0^{2\pi}\int\limits_0^1\int\limits_0^{r^2}zr^2\sin\theta\cos\theta\cdot r\dd{z}\dd{r}\dd{\theta}\\
+		&=0
+	\end{split}\]
+\end{anse}
+\begin{asign}
+	$\iiint\limits_D e^{(x^2+y^2+z^2)^\frac{3}{2}}\dd{V}$, where $D=\{(x,y,z)\in\mathbb{R}^3:x^2+y^2+z^2\leq 1\}$.
+\end{asign}
+\begin{anse}
+	Converting to spherical coordinates,
+	\[r\in[0,1]\land \theta\in[0,2\pi]\land \phi\in[0,\pi]\]
+	Thus, the integral is,
+	\[\begin{split}
+		I&=\int\limits_0^{2\pi}\int\limits_0^{\pi}\int\limits_0^1e^{r^3}\cdot r^2\sin\phi \dd{r}\dd{\phi}\dd{\theta}\\
+		&=\frac{4\pi(e-1)}{3}
+	\end{split}\]
+\end{anse}
+\subsection{Using Beta and Gamma functions, evaluate the following}
+\begin{asign}
+	\[\int\limits_0^\infty e^{-x^2}\dd{x}\]
+\end{asign}
+\begin{asign}
+	\[\int\limits_0^\frac{\pi}{2}\sqrt{\tan x}\dd{x}\]
+\end{asign}
+\begin{asign}
+	\[\int\limits_0^1x^m\left(\ln\frac{1}{x}\right)^n\dd{x}\]
+\end{asign}
+\begin{asign}
+	\[\int\limits_0^\frac{\pi}{2}\sin^4\theta\cos^6\theta\dd{\theta}\]
+\end{asign}
+\begin{asign}
+	\[\int\limits_0^\infty\frac{x^c}{c^x}\dd{x}\]
+\end{asign}
+\begin{asign}
+	\[\int\limits_0^\infty a^{-bx^2}\dd{x}\]
+\end{asign}
+\begin{asign}
+	\[\int_0^1x^5\left(\ln\frac{1}{x}\right)^3\dd{x}\]
+\end{asign}
+\begin{asign}
+	Express $\int_0^1x^m(1-x^p)^n\dd{x}$ in terms of Beta function and hence evaluate the integral,
+	\[\int\limits_0^1 x^\frac{3}{2}(1-\sqrt{x})^{\sqrt{12}} \dd{x}\]
+\end{asign}
+\begin{asign}
+	Show that,
+	\[\beta(p,q)=\int\limits_0^\infty\frac{y^{q-1}}{(1+y)^{p+q}}\dd{y}=\int\limits_0^1\frac{x^{p-1}+y^{q-1}}{(1+x)^{p+q}}\]
+\end{asign}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

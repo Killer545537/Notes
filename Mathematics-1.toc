@@ -1,0 +1,75 @@
+\contentsline {chapter}{\numberline {1}Functions of Single Variable}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Ranges}{4}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Maximum and Minimum}{4}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Infimum and Supremum}{4}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Bounded Set}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Limits}{5}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Sequence Definition of a Limit}{6}{subsection.1.3.1}%
+\contentsline {section}{\numberline {1.4}Differentiability}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Tutorial-1 (19.08.2023)}{8}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Examine the limit and continuity of the following functions}{8}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Are the following functions continuous and differentiable}{9}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Question 3}{11}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}Question 4}{11}{subsection.1.5.4}%
+\contentsline {subsection}{\numberline {1.5.5}Applications of IVT, Rolle's Theorem and MVT}{11}{subsection.1.5.5}%
+\contentsline {subsubsection}{Determine if the following equations admits solution in the interval mentioned}{11}{section*.3}%
+\contentsline {subsection}{\numberline {1.5.6}Problems on Hyperbolic Functions}{13}{subsection.1.5.6}%
+\contentsline {subsection}{\numberline {1.5.7}Find the real and Imaginary parts of the following}{13}{subsection.1.5.7}%
+\contentsline {subsection}{\numberline {1.5.8}Problems on Inverse Hyperbolic Functions}{14}{subsection.1.5.8}%
+\contentsline {subsection}{\numberline {1.5.9}Separate the real and imaginary parts of the following}{15}{subsection.1.5.9}%
+\contentsline {section}{\numberline {1.6}Successive Differentiation}{18}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}$n^\text {th}$ Order Derivatives of Common Functions}{18}{subsection.1.6.1}%
+\contentsline {section}{\numberline {1.7}Tutorial-2}{19}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Solve the following}{19}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Here $y_n=\dv [n]{y}{x}$ in the following parts:}{20}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.7.3}Find the $n^\text {th}$ derivative of the following functions}{21}{subsection.1.7.3}%
+\contentsline {subsection}{\numberline {1.7.4}Question 4}{22}{subsection.1.7.4}%
+\contentsline {subsection}{\numberline {1.7.5}Use Leibniz Theorem to solve the $n^\text {th}$ order derivative of the following}{23}{subsection.1.7.5}%
+\contentsline {subsection}{\numberline {1.7.6}If $y=(\sin ^{-1}x)^2$, prove that,}{25}{subsection.1.7.6}%
+\contentsline {subsection}{\numberline {1.7.7}Expand the following functions in power of $x$ by Maclaurin’s Theorem OR write the series expansion of function about the point $x = 0$}{26}{subsection.1.7.7}%
+\contentsline {subsection}{\numberline {1.7.8}Using Taylor's Theorem}{26}{subsection.1.7.8}%
+\contentsline {subsection}{\numberline {1.7.9}Question 9}{27}{subsection.1.7.9}%
+\contentsline {section}{\numberline {1.8}Taylor's Theorem \FN@sf@gobble@opt {By Brook Taylor}}{29}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Maclaurin Series \FN@sf@gobble@opt {By Colin Maclaurin}}{29}{subsection.1.8.1}%
+\contentsline {section}{\numberline {1.9}Hyperbolic Functions}{29}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}Graphs}{30}{subsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.9.2}Identities of Conversion}{31}{subsection.1.9.2}%
+\contentsline {subsection}{\numberline {1.9.3}Period}{31}{subsection.1.9.3}%
+\contentsline {subsection}{\numberline {1.9.4}Inverse Hyperbolic Functions}{32}{subsection.1.9.4}%
+\contentsline {subsection}{\numberline {1.9.5}More Identities of Conversion}{32}{subsection.1.9.5}%
+\contentsline {chapter}{\numberline {2}Functions of Several Variables}{33}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Limit in Higher Dimensions}{33}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Continuity}{34}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Partial Derivatives}{34}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Composition of Functions}{35}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Jacobian}{36}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Explicit and Implicit Functions}{37}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Maxima and Minima of Two Variables}{37}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Critical Point}{38}{subsection.2.7.1}%
+\contentsline {section}{\numberline {2.8}Tutorial-3}{39}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Determine the domain and range of the following functions}{39}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}Examine if the limits of the following functions $f(x,y)$ as $(x,y)\to (0,0)$ exist}{39}{subsection.2.8.2}%
+\contentsline {subsection}{\numberline {2.8.3}Examine the continuity of the following functions at $(0,0)$}{40}{subsection.2.8.3}%
+\contentsline {subsection}{\numberline {2.8.4}Find the first order partial derivatives of the following functions at the given points}{41}{subsection.2.8.4}%
+\contentsline {subsection}{\numberline {2.8.5}Calculate the partial derivatives of the following functions at $(0,0)$}{42}{subsection.2.8.5}%
+\contentsline {subsection}{\numberline {2.8.6}Find the Jacobian of the following functions}{46}{subsection.2.8.6}%
+\contentsline {subsection}{\numberline {2.8.7}Find $f_u$, $f_v$ and total derivative for the functions}{47}{subsection.2.8.7}%
+\contentsline {subsection}{\numberline {2.8.8}Using change of variable, prove the following}{47}{subsection.2.8.8}%
+\contentsline {subsection}{\numberline {2.8.9}Find $\dv {y}{x}$ for the following implicit functions}{49}{subsection.2.8.9}%
+\contentsline {chapter}{\numberline {3}Multiple Integrals}{51}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Integration}{51}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Double Integrals}{52}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}X-Regular and Y-Regular}{52}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Change of Variables}{54}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Integrals using Polar Coordinate Systems}{55}{subsection.3.3.1}%
+\contentsline {subsubsection}{Cardioid}{55}{section*.10}%
+\contentsline {section}{\numberline {3.4}Triple Integrals}{56}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Beta Function}{58}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Gamma Function}{58}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Tutorial-6}{59}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Evaluate the double integrals}{59}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Evaluate the following integrals by changing the order of integration if needed}{60}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.3}Find the volume of the following}{63}{subsection.3.7.3}%
+\contentsline {subsection}{\numberline {3.7.4}Use the given transformations to transform the integrals and evaluate them}{63}{subsection.3.7.4}%
+\contentsline {subsection}{\numberline {3.7.5}Evaluate the following volume integrals}{65}{subsection.3.7.5}%
+\contentsline {subsection}{\numberline {3.7.6}Using Beta and Gamma functions, evaluate the following}{66}{subsection.3.7.6}%
